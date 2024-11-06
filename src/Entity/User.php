@@ -7,16 +7,17 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
-#[ORM\Entity(repositoryClass: UserRepository::class)]
+#[ORM\Entity]
 #[ORM\Table(name: '`user`')]
-#[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
+
 class User
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: DailyQuizLimit::class, cascade: ['persist', 'remove'])]
+   
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
@@ -244,7 +245,7 @@ class User
     {
         if (!$this->dailyQuizLimits->contains($dailyQuizLimit)) {
             $this->dailyQuizLimits->add($dailyQuizLimit);
-            $dailyQuizLimit->setUserId($this);
+            $dailyQuizLimit->setUser($this);
         }
 
         return $this;
@@ -254,8 +255,8 @@ class User
     {
         if ($this->dailyQuizLimits->removeElement($dailyQuizLimit)) {
             // set the owning side to null (unless already changed)
-            if ($dailyQuizLimit->getUserId() === $this) {
-                $dailyQuizLimit->setUserId(null);
+            if ($dailyQuizLimit->getUser() === $this) {
+                $dailyQuizLimit->setUser(null);
             }
         }
 
