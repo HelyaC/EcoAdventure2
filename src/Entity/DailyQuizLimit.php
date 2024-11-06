@@ -3,40 +3,59 @@
 namespace App\Entity;
 
 use App\Repository\DailyQuizLimitRepository;
-use Doctrine\DBAL\Types\Types;
+//use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use App\Entity\User;
 
 #[ORM\Entity(repositoryClass: DailyQuizLimitRepository::class)]
+    #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'dailyQuizLimits')]
+
 class DailyQuizLimit
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
-    #[ORM\Column]
-    private ?int $id = null;
+    #[ORM\Column(type: 'integer')]
+    #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'dailyQuizLimits')]
+    #[ORM\JoinColumn(nullable: false)]
 
-    #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
-    private ?\DateTimeInterface $quiz_date = null;
+    private $id ;
 
-    #[ORM\Column(nullable: true)]
-    private ?int $quizCount = null;
+    #[ORM\ManyToOne(targetEntity: User::class)]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?User $user = null;
 
-    #[ORM\ManyToOne(inversedBy: 'dailyQuizLimits')]
-    private ?User $user_id = null;
+    #[ORM\Column(type: 'date')]
+    private $quizDate;
+
+    #[ORM\Column(type: 'integer')]
+    private $quizCount;
+
+    // Getters et setters
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getQuizDate(): ?\DateTimeInterface
+    public function getUser(): ?User
     {
-        return $this->quiz_date;
+        return $this->user;
     }
 
-    public function setQuizDate(?\DateTimeInterface $quiz_date): static
+    public function setUser(?User $user): self
     {
-        $this->quiz_date = $quiz_date;
+        $this->user = $user;
+        return $this;
+    }
 
+    public function getQuizDate(): ?\DateTimeInterface
+    {
+        return $this->quizDate;
+    }
+
+    public function setQuizDate(\DateTimeInterface $quizDate): self
+    {
+        $this->quizDate = $quizDate;
         return $this;
     }
 
@@ -45,22 +64,9 @@ class DailyQuizLimit
         return $this->quizCount;
     }
 
-    public function setQuizCount(?int $quizCount): static
+    public function setQuizCount(int $quizCount): self
     {
         $this->quizCount = $quizCount;
-
-        return $this;
-    }
-
-    public function getUserId(): ?User
-    {
-        return $this->user_id;
-    }
-
-    public function setUserId(?User $user_id): static
-    {
-        $this->user_id = $user_id;
-
         return $this;
     }
 }
