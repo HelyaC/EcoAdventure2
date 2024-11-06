@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contactez-nous{% endblock %}
+
+{% block body %}
+
+<section class="bg-white dark:bg-gray-900 px-4 sm:px-6 lg:px-8 space-y-8 ">
+    <h1 class="text-center text-[#6e6e6e] text-4xl font-semibold font-['Inter'] tracking-wide my-8">Nous contacter</h1>
+
+    <div class="py-8 lg:py-16 max-w-lg mx-auto">
+        <form action="#" method="post" class="space-y-6">
+            <div>
+                <input 
+                    type="text" 
+                    id="name" 
+                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#a4b07d] focus:border-[#a4b07d] block w-full p-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" 
+                    placeholder="Nom et prénom" 
+                    required>
+            </div>
+            <div>
+                <input 
+                    type="email" 
+                    id="email" 
+                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#a4b07d] focus:border-[#a4b07d] block w-full p-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" 
+                    placeholder="Email" 
+                    required>
+            </div>
+            <div>
+                <input 
+                    type="text" 
+                    id="subject" 
+                    class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-[#a4b07d] focus:border-[#a4b07d] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" 
+                    placeholder="Sujet" 
+                    required>
+            </div>
+            <div>
+                <textarea 
+                    id="message" 
+                    rows="6" 
+                    class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-[#a4b07d] focus:border-[#a4b07d] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" 
+                    placeholder="Message..." 
+                    required></textarea>
+            </div>
+            <div class="text-center">
+                <button 
+                    type="submit" 
+                    class="py-3 px-6 w-80 sm:w-auto text-sm font-medium text-white bg-[#a4b07d] rounded-lg hover:bg-[#8e9d6a] transition focus:ring-4 focus:outline-none focus:ring-[#a4b07d] dark:bg-[#8e9d6a] dark:hover:bg-[#7d895f]">
+                    Envoyer
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
+
+{% endblock %}
