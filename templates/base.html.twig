@@ -17,9 +17,19 @@
     {% endblock %}
 </head>
 <body>
-{% block body %}
+<body>
+    <header>
+        {% include 'components/naviguation/header.html.twig' %}
+    </header>
 
-{% endblock %}
+    <div class="p-10 lg:p-24 space-y-14 lg:space-y-24 pt-28"> {% block body %}{% endblock %}
+			</div>
+			<footer>
+				{% include 'components/naviguation/footer.html.twig'%}
+			</footer>
+		</body>
+
+</body>
 
         <!--Start of Tawk.to Script-->
         <script type="text/javascript">
