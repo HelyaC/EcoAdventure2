@@ -1,0 +1,95 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Administration{% endblock %}
+
+{% block body %}
+    <div>
+
+        <section class="flex items-center justify-center bg-cover bg-center w-[1293px] h-[722px]" style="background-image: url('{{ asset('images/frontDiv.png') }}')"></section>
+
+        <section class="py-16 px-8 bg-white">
+            <h2 class="text-3xl font-bold text-center mb-12">A SAVOIR</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-100 shadow-lg rounded-lg overflow-hidden">
+                    <img src="images/imageTest.jpg" alt="Image du module 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Titre</h3>
+                        <p class="text-gray-700">Description du module 1. Découvrez plus sur ce service.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 px-8 bg-gray-100 flex flex-col md:flex-row gap-8">
+            <div class="md:w-1/2 flex flex-col justify-center">
+                <h2 class="text-3xl font-bold mb-4">C’est tout à propos des </h2>
+                <p class="text-gray-700 mb-6">
+                    Découvrez nos initiatives écologiques et participez à nos activités pour un avenir plus vert.
+                    Engagez-vous avec nous pour faire la différence et préserver notre planète.
+                </p>
+                <button class="bg-green-600 text-white px-6 py-3 rounded-md hover:bg-green-700 transition">Jouer</button>
+            </div>
+            <div class="md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <img src="images/imageTest.jpg" alt="Activité 1" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold">Activité 1</h3>
+                        <p class="text-gray-600 mt-2">Description de l'activité écologique 1.</p>
+                    </div>
+                </div>
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <img src="images/imageTest.jpg" alt="Activité 2" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold">Activité 2</h3>
+                        <p class="text-gray-600 mt-2">Description de l'activité écologique 2.</p>
+                    </div>
+                </div>
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <img src="images/imageTest.jpg" alt="Activité 3" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold">Activité 3</h3>
+                        <p class="text-gray-600 mt-2">Description de l'activité écologique 3.</p>
+                    </div>
+                </div>
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <img src="images/imageTest.jpg" alt="Activité 4" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold">Activité 4</h3>
+                        <p class="text-gray-600 mt-2">Description de l'activité écologique 4.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 px-8 bg-gray-100">
+            <h1>Dernières nouvelles</h1>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden text-center p-6">
+                    <div class="w-32 h-32 mx-auto mb-4">
+                        <img src="images/imageTest.jpg" alt="Image du module 1" class="w-full h-full object-cover rounded-full">
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Titre</h3>
+                    <p class="text-gray-700">Description du module 1. Découvrez plus sur ce service.</p>
+                </div>
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden text-center p-6">
+                    <div class="w-32 h-32 mx-auto mb-4">
+                        <img src="images/imageTest.jpg" alt="Image du module 2" class="w-full h-full object-cover rounded-full">
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Titre</h3>
+                    <p class="text-gray-700">Description du module 2. Découvrez plus sur ce service.</p>
+                </div>
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden text-center p-6">
+                    <div class="w-32 h-32 mx-auto mb-4">
+                        <img src="images/imageTest.jpg" alt="Image du module 3" class="w-full h-full object-cover rounded-full">
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Titre</h3>
+                    <p class="text-gray-700">Description du module 3. Découvrez plus sur ce service.</p>
+                </div>
+            </div>
+            <div class="text-center">
+                <button class="bg-green-600 text-white px-8 py-3 rounded-full hover:bg-green-700 transition">Apprendre</button>
+            </div>
+        </section>
+    </div>
+
+{% endblock %}
