@@ -4,7 +4,8 @@
 
 {% block body %}
 <h2>Quiz</h2>
-<form action="{{ path('quiz_submit') }}" method="post">
+{{ dump(question) }}
+{# <form action="{{ path('quiz_submit') }}" method="post">
     <p>{{ question.question }}</p>
     <input type="radio" name="selected_answer" value="{{ question.correctAnswer }}"> {{ question.correctAnswer }}<br>
     <input type="radio" name="selected_answer" value="{{ question.wrongAnswer1 }}"> {{ question.wrongAnswer1 }}<br>
@@ -12,6 +13,6 @@
     <input type="radio" name="selected_answer" value="{{ question.wrongAnswer3 }}"> {{ question.wrongAnswer3 }}<br>
     <input type="hidden" name="question_id" value="{{ question.id }}">
     <button type="submit">Submit</button>
-</form>
+</form> #}
 
 {% endblock %}

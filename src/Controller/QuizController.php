@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\QuizQuestion;
 use App\Entity\UserQuiz;
 use App\Entity\DailyQuizLimit;
+use app\Entity\User;
 //use App\Repository\QuizQuestionRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -12,24 +13,42 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 use DateTime;
+use App\service\indexService;
 
 class QuizController extends AbstractController
 {
     private const DAILY_QUIZ_LIMIT = 3;
+    private $indexService;
 
+    public function __construct(IndexService $indexService)
+    {
+        $this->indexService = $indexService;
+    }
+
+    #[Route('/quiz/check-limit', name: 'quiz_check_limit')]
+    public function checkLimit(User $user): Response
+    {
+        // Vérifiez si l'utilisateur a atteint la limite quotidienne
+        $hasReachedLimit = $this->indexService->hasReachedDailyLimit($user);
+
+        if ($hasReachedLimit) {
+            return new Response("Vous avez atteint votre limite de quiz quotidienne.");
+        }
+
+        return new Response("Vous pouvez encore passer des quiz aujourd'hui.");
+    }
+    
     #[Route('/quiz', name: 'quiz_index')]
-    public function index(EntityManagerInterface $entityManager): Response
+    public function index(EntityManagerInterface $entityManager): Response //, indexService $indexService
     {
         $user = $this->getUser();
 
-        if ($this->hasReachedDailyLimit($user, $entityManager)) {
-            return $this->render('quiz/limit_reached.html.twig', [
-                'message' => "Vous avez atteint votre limite quotidienne de quiz.",
-            ]);
-        }
-
-        // Récupère une question aléatoire pour l'utilisateur
-        $question = $entityManager->getRepository(QuizQuestion::class)->findRandomQuestion();
+        // if ($this->hasReachedDailyLimit($user, $entityManager)) {
+        //     return $this->render('quiz/limit_reached.html.twig', [
+        //         'message' => "Vous avez atteint votre limite quotidienne de quiz.",
+        //     ]);
+        // }
+        $question = $entityManager->getRepository(QuizQuestion::class)->findAll(); //findRandomQuestion
         
         return $this->render('quiz/index.html.twig', [
             'question' => $question,
