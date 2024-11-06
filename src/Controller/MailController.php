@@ -13,6 +13,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use \Mailjet\Client;
 use \Mailjet\Resources;
+use Symfony\Component\HttpFoundation\Request;
 
 class MailController extends AbstractController
 {
@@ -64,5 +65,22 @@ class MailController extends AbstractController
             $mailjet->post(Resources::$Email, ['body' => $body]);
         }
         return $this->redirect('mail');
+    }
+
+    #[Route('/add-subscriber', name: 'add.subscriber', methods: ['GET', 'POST'])]
+    public function addSubscriber(Request $request, EntityManagerInterface $em): Response
+    {
+        if ($request->isMethod('POST')){
+            $email = $request->request->get('email');
+            $subscription = $em->getRepository(NewsletterSubscription::class);
+            $userRepository = $em->getRepository(User::class);
+            $subscriber = new NewsletterSubscription();
+            $subscriber->setEmail($email);
+            $subscriber->setSubscribedAt(new \DateTimeImmutable());
+            $subscriber->setUserId($userRepository->findOneById(5));
+            $em->persist($subscriber);
+            $em->flush();
+        }
+        return $this->redirectToRoute('app_index');
     }
 }
