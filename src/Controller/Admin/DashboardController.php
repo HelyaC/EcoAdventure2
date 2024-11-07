@@ -15,8 +15,11 @@ use App\Entity\Contact;
 use App\Entity\Challenge;
 use App\Entity\CarbonFootPrint;
 use App\Entity\Badge;
+use App\Entity\LastNews;
 
 
+
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextAreaField; 
 
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
@@ -50,6 +53,8 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Challenges', 'fa fa-trophy', Challenge::class);
         yield MenuItem::linkToCrud('Empreinte Carbone', 'fa fa-leaf', CarbonFootPrint::class); 
         yield MenuItem::linkToCrud('Badges', 'fas fa-trophy', Badge::class);
+        yield MenuItem::linkToCrud('Dernières Nouvelles', 'fa fa-newspaper', LastNews::class);
+
 
 
 
