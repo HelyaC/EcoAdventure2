@@ -5,76 +5,68 @@
 {% block body %}
 
     <div class="flex justify-center flex-col items-center">
-
-        <!-- DIV N1 -->
-    <div class="relative w-full py-10 flex justify-center items-center">
-    <img class="w-full max-w-screen-lg h-auto object-cover rounded-md" src="images/frontDiv1.png" alt="Random image">
-
-    
-
-    <!-- Texte centré et responsive -->
-    <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
-        <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-bold">EcoAdventure</h1>
-        <p class="text-white text-lg md:text-2xl lg:text-3xl mt-2">Agissons ensemble pour préserver notre planète</p>
-    </div>
+<div class="relative w-full bg-[#F9F2E1] py-10 flex justify-center items-center">
+    <img class="w-full max-w-screen-lg h-auto object-cover rounded-md" src="/images/front.jpg" alt="Random image">
 </div>
-<!-- DIV N2 -->
-<div class="w-full bg-[#CFD897] py-10">
-    <div class="text-center text-[#0f0d06] text-3xl sm:text-4xl md:text-5xl lg:text-[64px] font-semibold tracking-wide">
-        A savoir
-    </div>
 
-    <div class="flex justify-center py-10">
-        <!-- Conteneur en grille pour les cartes, avec disposition responsive -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            <!-- Première carte -->
-            <div class="relative flex flex-col sm:flex-row w-full max-w-md h-auto bg-gray-300 rounded-2xl p-4 shadow-lg">
-                <div class="w-full sm:w-24 h-32 sm:h-full bg-gray-400 rounded-2xl flex-shrink-0"></div>
-                <div class="mt-4 sm:mt-0 sm:ml-4 flex flex-col justify-between">
-                    <div class="text-black text-lg font-medium leading-tight">
-                        Lorem ipsum dolor sit amet
+        <!-- DIV N2 -->
+        <div class="w-full bg-[#CFD897] py-10">
+            <div class="text-center text-[#0f0d06] text-[64px] font-semibold tracking-wide">
+                A savoir
+            </div>
+
+            <div class="flex justify-center py-10">
+                <!-- Conteneur en ligne pour les 3 cartes -->
+                <div class="flex flex-row gap-6">
+                    <!-- Première carte -->
+                    <div class="relative flex w-96 h-44 bg-gray-300 rounded-2xl p-4 shadow-lg">
+                        <div class="w-24 h-full bg-gray-400 rounded-2xl flex-shrink-0"></div>
+                        <div class="ml-4 flex flex-col justify-between">
+                            <div class="text-black text-lg font-medium leading-tight">
+                                New Trains Architecture - Marino de Pasa
+                            </div>
+                            <div class="flex flex-row gap-4 text-sm text-gray-500 font-medium tracking-tight">
+                                <div>2023 / 01 / 01</div>
+                                <div>#world #tech</div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="flex flex-row gap-4 text-sm text-gray-500 font-medium tracking-tight">
-                        <div>2023 / 01 / 01</div>
-                        <div>#world #tech</div>
+
+                    <!-- Deuxième carte -->
+                    <div class="relative flex w-96 h-44 bg-gray-300 rounded-2xl p-4 shadow-lg">
+                        <div class="w-24 h-full bg-gray-400 rounded-2xl flex-shrink-0"></div>
+                        <div class="ml-4 flex flex-col justify-between">
+                            <div class="text-black text-lg font-medium leading-tight">
+                                New Trains Architecture - Marino de Pasa
+                            </div>
+                            <div class="flex flex-row gap-4 text-sm text-gray-500 font-medium font-['Inter'] tracking-tight">
+                                <div>2023 / 01 / 01</div>
+                                <div>#world #tech</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Troisième carte -->
+                    <div class="relative flex w-96 h-44 bg-gray-300 rounded-2xl p-4 shadow-lg">
+                        <div class="w-24 h-full bg-gray-400 rounded-2xl flex-shrink-0"></div>
+                        <div class="ml-4 flex flex-col justify-between">
+                            <div class="text-black text-lg font-medium leading-tight">
+                                New Trains Architecture - Marino de Pasa
+                            </div>
+                            <div class="flex flex-row gap-4 text-sm text-gray-500 font-medium tracking-tight">
+                                <div>2023 / 01 / 01</div>
+                                <div>#world #tech</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Deuxième carte -->
-            <div class="relative flex flex-col sm:flex-row w-full max-w-md h-auto bg-gray-300 rounded-2xl p-4 shadow-lg">
-                <div class="w-full sm:w-24 h-32 sm:h-full bg-gray-400 rounded-2xl flex-shrink-0"></div>
-                <div class="mt-4 sm:mt-0 sm:ml-4 flex flex-col justify-between">
-                    <div class="text-black text-lg font-medium leading-tight">
-                        Lorem ipsum dolor sit amet
-                    </div>
-                    <div class="flex flex-row gap-4 text-sm text-gray-500 font-medium tracking-tight">
-                        <div>2023 / 01 / 01</div>
-                        <div>#world #tech</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Troisième carte -->
-            <div class="relative flex flex-col sm:flex-row w-full max-w-md h-auto bg-gray-300 rounded-2xl p-4 shadow-lg">
-                <div class="w-full sm:w-24 h-32 sm:h-full bg-gray-400 rounded-2xl flex-shrink-0"></div>
-                <div class="mt-4 sm:mt-0 sm:ml-4 flex flex-col justify-between">
-                    <div class="text-black text-lg font-medium leading-tight">
-                        Lorem ipsum dolor sit amet
-                    </div>
-                    <div class="flex flex-row gap-4 text-sm text-gray-500 font-medium tracking-tight">
-                        <div>2023 / 01 / 01</div>
-                        <div>#world #tech</div>
-                    </div>
-                </div>
+            <div class="flex justify-center text-center text-[#717171] text-base font-medium tracking-tight">
+                Interseted about trains ! Your in the right place. Read a wide variety of train articles from our
+                website including history of railroads and new technology of railroads <br/>Its all about trains and
+                technology
             </div>
         </div>
-    </div>
-
-    <div class="flex justify-center text-center text-[#717171] text-base sm:text-lg font-medium tracking-tight px-4">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor
-    </div>
-</div>
 
         <!-- DIV N3 -->
         <div class="w-full bg-[#F9F2E1] py-10">
@@ -89,7 +81,9 @@
                         données
                     </div>
                     <div class="font-semibold tracking-wide">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor
+                        Welcome to RailLink our website! We are dedicated to all things related to trains and railroads.
+                        Whether you are a passenger or a train enthusiast who has just started your journey to the
+                        fascinating world of trains, this website is the perfect place for you.
                     </div>
                     <!-- Bouton "Jouer" -->
                     <div class="mt-6">

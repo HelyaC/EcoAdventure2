@@ -12,9 +12,10 @@
             <a href="{{ path('app_jeux') }}" class="{% if app.request.attributes.get('_route') == 'app_jeux' %}text-white{% else %}text-black{% endif %} text-xl font-normal font-['Inter'] hover:text-gray-800 transition duration-300">Jeux</a>
         </div>
     </div>
+    
     <div class="hidden md:flex items-center space-x-4">
-        <a href="{{ path('app_profil') }}" class="text-black text-xl font-normal font-['Inter'] hover:text-gray-800 transition duration-300">Profil</a>
-        <a href="{{ path('app_register') }}" class="text-black text-xl font-normal font-['Inter'] hover:text-gray-800 transition duration-300">Se Connecter</a>
+        <a href="{{ path('app_profil') }}" class="{% if app.request.attributes.get('_route') == 'app_profil' %}text-white{% else %}text-black{% endif %} text-xl font-normal font-['Inter'] hover:text-gray-800 transition duration-300">Profil</a>
+         <a href="{{ path('app_register') }}" class="{% if app.request.attributes.get('_route') == 'app_register' %}text-white{% else %}text-black{% endif %} text-xl font-normal font-['Inter'] hover:text-gray-800 transition duration-300">Se Connecter</a>
     </div>
 </div>
 
