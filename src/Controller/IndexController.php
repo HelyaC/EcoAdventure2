@@ -15,4 +15,12 @@ class IndexController extends AbstractController
             'controller_name' => 'IndexController',
         ]);
     }
+
+    #[Route('/jeux', name: 'app_jeux')]
+    public function jeux(): Response
+    {
+        return $this->render('jeux/jeux.html.twig', [
+            'controller_name' => 'IndexController',
+        ]);
+    }
 }
