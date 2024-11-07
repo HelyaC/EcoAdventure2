@@ -12,7 +12,7 @@
     </div>
 
     <!-- Formulaire d'Informations Utilisateur -->
-<div class="bg-[#a4b07d] rounded-3xl p-6 mx-4 sm:mx-10 md:mx-20 lg:mx-40 space-y-5 mt-8">
+<div class="bg-[#a4b07d] rounded-3xl p-6 mx-4 sm:mx-10 md:mx-20 lg:mx-40 space-y-5 mt-8 ">
     <div class="space-y-5">
         <div>
             
@@ -31,10 +31,22 @@
 
     <!-- Statistiques Utilisateur -->
     <div class="grid grid-cols-2 gap-6 text-center mb-8 w-full max-w-md mx-auto items-center justify-center mt-8">
-        {% for i in 1..4 %}
-            <div class="bg-gray-100 rounded-lg py-4">
-                <p class="text-gray-500">55</p>
-                <p class="font-semibold">Quizzes</p>
+        {% for i in 1..1 %}
+            <div class="bg-green-300 text-white font-bold py-2 px-4 rounded hover:bg-green-500 transition duration-300 ease-in-out transform hover:scale-105">
+                <p class="text-black">40</p>
+                <p class=" text-black font-semibold">EcoScore</p>
+            </div>
+            <div class="bg-blue-300 text-white font-bold py-2 px-4 rounded hover:bg-blue-500 transition duration-300 ease-in-out transform hover:scale-105">
+                <p class="text-black">45</p>
+                <p class=" text-black font-semibold">Cours</p>
+            </div>
+            <div class="bg-red-300 text-white font-bold py-2 px-4 rounded hover:bg-red-500 transition duration-300 ease-in-out transform hover:scale-105">
+                <p class="text-black">40</p>
+                <p class="text-black font-semibold">Challenge</p>
+            </div>
+            <div class="bg-yellow-300 text-white font-bold py-2 px-4 rounded hover:bg-yellow-500 transition duration-300 ease-in-out transform hover:scale-105">
+                <p class="text-black">55</p>
+                <p class="text-black font-semibold">Quizz</p>
             </div>
         {% endfor %}
     </div>
@@ -51,6 +63,7 @@
                 </div>
                 <h3 class="text-2xl font-bold text-amber-500">GOLD</h3>
                 <p class="bg-amber-300 opacity-50 rounded-lg text-black font-semibold text-2xl p-1">55</p>
+                <h3 class="text-2xl font-bold text-amber-500">QUIZZ</h3>
             </div>
 
             <!-- Silver Badge -->
@@ -60,6 +73,7 @@
                 </div>
                 <h3 class="text-2xl font-bold text-gray-600">SYLVER</h3>
                 <p class="bg-gray-300 opacity-50 rounded-lg text-black font-semibold text-2xl p-1">55</p>
+                <h3 class="text-2xl font-bold text-gray-600">COURS</h3>
             </div>
 
             <!-- Bronze Badge -->
@@ -69,6 +83,7 @@
                 </div>
                 <h3 class="text-2xl font-bold text-orange-[#d4885d]">BRONZE</h3>
                 <p class="bg-[#d4885d] opacity-50 rounded-lg text-black font-semibold text-2xl p-1">55</p>
+                <h3 class="text-2xl font-bold text-orange-[#d4885d]">CHALLENGE</h3>
             </div>
         </div>
     </div>

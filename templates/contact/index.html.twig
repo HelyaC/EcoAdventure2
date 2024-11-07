@@ -4,23 +4,25 @@
 
 {% block body %}
 
-<section class="bg-white px-4 sm:px-6 lg:px-8 space-y-8 mb-20"> <!-- Ajout de mb-20 pour l'espacement -->
+<section class="bg-[#F9F2E1] px-4 sm:px-6 lg:px-8 space-y-8 mb-20"> <!-- Ajout de mb-20 pour l'espacement -->
     <h1 class="text-center text-[#6e6e6e] text-4xl font-semibold font-['Inter'] tracking-wide my-8">Nous contacter</h1>
 
     <div class="py-8 lg:py-16 max-w-lg mx-auto bg-[#a4b07d] p-8 rounded-lg shadow-lg">
-        <form action="#" method="post" class="space-y-6">
+        <form action="{{ path('send.contact') }}" method="post" class="space-y-6">
             <div>
                 <input 
                     type="text" 
-                    id="name" 
+                    id="name"
+                    name="name" 
                     class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#8e9d6a] focus:border-[#8e9d6a] block w-full p-3" 
                     placeholder="Nom et prénom" 
                     required>
             </div>
             <div>
                 <input 
-                    type="email" 
-                    id="email" 
+                    type="email"
+                    id="email"
+                    name="email"
                     class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#8e9d6a] focus:border-[#8e9d6a] block w-full p-3" 
                     placeholder="Email" 
                     required>
@@ -28,7 +30,8 @@
             <div>
                 <input 
                     type="text" 
-                    id="subject" 
+                    id="subject"
+                    name="subject" 
                     class="block p-3 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-300 shadow-sm focus:ring-[#8e9d6a] focus:border-[#8e9d6a]" 
                     placeholder="Sujet" 
                     required>
@@ -36,6 +39,7 @@
             <div>
                 <textarea 
                     id="message" 
+                    name="message"
                     rows="6" 
                     class="block p-3 w-full text-sm text-gray-900 bg-white rounded-lg shadow-sm border border-gray-300 focus:ring-[#8e9d6a] focus:border-[#8e9d6a]" 
                     placeholder="Message..." 
