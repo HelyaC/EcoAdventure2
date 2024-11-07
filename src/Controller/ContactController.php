@@ -31,6 +31,8 @@ class ContactController extends AbstractController
             $contact = new Contact();
             $contact->setSubject($request->request->get('subject'))
                     ->setMessage($request->request->get('message'))
+                    ->setName($request->request->get('name'))
+                    ->setEmail($request->request->get('email'))
                     ->setSubmitedAt(new \DateTimeImmutable())
                     ->setUserId($user);
             $em->persist($contact);
