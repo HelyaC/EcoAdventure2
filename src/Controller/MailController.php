@@ -53,7 +53,7 @@ class MailController extends AbstractController
                         'To' => [
                             [
                                 'Email' => $subscriber->getEmail(),
-                                'Name' => $user->getlastName()." ".$user->getfirstName()
+                                'Name' => $user->getLastName()." ".$user->getFirstName()
                             ]
                         ],
                         'Subject' => "NewsLetter",
