@@ -5,66 +5,85 @@
 {% block body %}
 
     <div class="flex justify-center flex-col items-center">
-<div class="relative w-full bg-[#F9F2E1] py-10 flex justify-center items-center">
-    <img class="w-full max-w-screen-lg h-auto object-cover rounded-md" src="/images/front.jpg" alt="Random image">
-</div>
 
         <!-- DIV N2 -->
         <div class="w-full bg-[#CFD897] py-10">
-            <div class="text-center text-[#0f0d06] text-[64px] font-semibold tracking-wide">
+            <div class="text-center text-[#0f0d06] text-3xl sm:text-4xl md:text-5xl lg:text-[64px] font-semibold tracking-wide">
                 A savoir
             </div>
+            <div class="flex justify-center py-10 px-4 sm:px-6 lg:px-8">
+                <!-- Conteneur en grille pour les cartes, avec disposition responsive -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
 
-            <div class="flex justify-center py-10">
-                <!-- Conteneur en ligne pour les 3 cartes -->
-                <div class="flex flex-row gap-6">
                     <!-- Première carte -->
-                    <div class="relative flex w-96 h-44 bg-gray-300 rounded-2xl p-4 shadow-lg">
-                        <div class="w-24 h-full bg-gray-400 rounded-2xl flex-shrink-0"></div>
-                        <div class="ml-4 flex flex-col justify-between">
+                    <div class="relative flex flex-col sm:flex-row w-full max-w-md h-auto bg-gray-300 rounded-2xl p-4 shadow-lg">
+                        <!-- Image plus large -->
+                        <img class="w-full sm:w-1/2 h-48 sm:h-64 object-cover rounded-2xl flex-shrink-0"
+                             src="images/windmill-5591464_1280.jpg" alt="Description de l'image">
+
+                        <div class="mt-4 sm:mt-0 sm:ml-4 flex flex-col justify-between">
                             <div class="text-black text-lg font-medium leading-tight">
-                                New Trains Architecture - Marino de Pasa
+                                Comprendre le Changement Climatique : Causes, Impacts et Solutions
+                            </div>
+                            <div>
+                                Le changement climatique est un phénomène écologique causé principalement par
+                                l'augmentation des gaz à effet de serre, comme le dioxyde de carbone (CO₂), dans
+                                l'atmosphère...
                             </div>
                             <div class="flex flex-row gap-4 text-sm text-gray-500 font-medium tracking-tight">
                                 <div>2023 / 01 / 01</div>
-                                <div>#world #tech</div>
+                                <!-- Lien "voir plus" -->
+                                <a href="URL_DE_TON_LIEN" class="text-blue-500 hover:underline">Voir plus</a>
                             </div>
                         </div>
                     </div>
 
                     <!-- Deuxième carte -->
-                    <div class="relative flex w-96 h-44 bg-gray-300 rounded-2xl p-4 shadow-lg">
-                        <div class="w-24 h-full bg-gray-400 rounded-2xl flex-shrink-0"></div>
-                        <div class="ml-4 flex flex-col justify-between">
+                    <div class="relative flex flex-col sm:flex-row w-full max-w-md h-auto bg-gray-300 rounded-2xl p-4 shadow-lg">
+                        <!-- Image plus large -->
+                        <img class="w-full sm:w-1/2 h-48 sm:h-64 object-cover rounded-2xl flex-shrink-0"
+                             src="images/tortue.jpg" alt="Description de l'image">
+
+                        <div class="mt-4 sm:mt-0 sm:ml-4 flex flex-col justify-between">
                             <div class="text-black text-lg font-medium leading-tight">
-                                New Trains Architecture - Marino de Pasa
+                                La Pollution Plastique : Enjeux et Solutions
                             </div>
-                            <div class="flex flex-row gap-4 text-sm text-gray-500 font-medium font-['Inter'] tracking-tight">
+                            <div>
+                                La pollution plastique est un problème écologique majeur, causé par la production
+                                massive de plastiques à usage unique et leur mauvaise gestion en fin de vie...
+                            </div>
+                            <div class="flex flex-row gap-4 text-sm text-gray-500 font-medium tracking-tight">
                                 <div>2023 / 01 / 01</div>
-                                <div>#world #tech</div>
+                                <a href="URL_DE_TON_LIEN" class="text-blue-500 hover:underline">Voir plus</a>
                             </div>
                         </div>
                     </div>
 
                     <!-- Troisième carte -->
-                    <div class="relative flex w-96 h-44 bg-gray-300 rounded-2xl p-4 shadow-lg">
-                        <div class="w-24 h-full bg-gray-400 rounded-2xl flex-shrink-0"></div>
-                        <div class="ml-4 flex flex-col justify-between">
+                    <div class="relative flex flex-col sm:flex-row w-full max-w-md h-auto bg-gray-300 rounded-2xl p-4 shadow-lg">
+                        <!-- Image plus large -->
+                        <img class="w-full sm:w-1/2 h-48 sm:h-64 object-cover rounded-2xl flex-shrink-0"
+                             src="images/Deforestation.jpg" alt="Description de l'image">
+
+                        <div class="mt-4 sm:mt-0 sm:ml-4 flex flex-col justify-between">
                             <div class="text-black text-lg font-medium leading-tight">
-                                New Trains Architecture - Marino de Pasa
+                                La Déforestation : Impacts et Solutions
+                            </div>
+                            <div>
+                                La déforestation est la destruction des forêts, souvent pour créer des terres agricoles,
+                                obtenir du bois ou développer des infrastructures...
                             </div>
                             <div class="flex flex-row gap-4 text-sm text-gray-500 font-medium tracking-tight">
                                 <div>2023 / 01 / 01</div>
-                                <div>#world #tech</div>
+                                <a href="URL_DE_TON_LIEN" class="text-blue-500 hover:underline">Voir plus</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="flex justify-center text-center text-[#717171] text-base font-medium tracking-tight">
-                Interseted about trains ! Your in the right place. Read a wide variety of train articles from our
-                website including history of railroads and new technology of railroads <br/>Its all about trains and
-                technology
+            <div class="flex justify-center text-center text-[#717171] text-base sm:text-lg font-medium tracking-tight px-4">
+                Venez en apprendre davantage sur l'écologie pour donner le meilleur de nous-mêmes et progresser
+                constamment.
             </div>
         </div>
 
@@ -80,15 +99,13 @@
                     <div class="text-[#b1ca77] text-6xl md:text-7xl lg:text-8xl font-semibold tracking-wide">
                         données
                     </div>
-                    <div class="font-semibold tracking-wide">
-                        Welcome to RailLink our website! We are dedicated to all things related to trains and railroads.
-                        Whether you are a passenger or a train enthusiast who has just started your journey to the
-                        fascinating world of trains, this website is the perfect place for you.
+                    <div class="font-semibold text-2xl tracking-wide">
+                       Chaque pas compte pour l’environnement !
                     </div>
                     <!-- Bouton "Jouer" -->
                     <div class="mt-6">
-                        <button class="w-44 h-12 bg-[#b1ca77] rounded-full text-[#0f0d06] text-xl font-semibold tracking-widest shadow-md hover:bg-[#a1b86c]">
-                            Jouer
+                        <button class="w-64 m-10 ms-24 h-12 bg-[#b1ca77] rounded-full text-[#0f0d06] text-xl font-semibold tracking-widest shadow-md hover:bg-[#a1b86c]">
+                            Relève le défi !
                         </button>
                     </div>
                 </div>
@@ -96,56 +113,56 @@
                 <!-- Grille de cartes -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:w-1/2">
                     <!-- Carte 1 -->
-                    <div class="relative bg-[#5180c7] rounded-3xl shadow-lg p-0 w-full">
-                        <img class="w-full h-[200px] object-cover rounded-t-3xl" src="images/imageTest.jpg" alt="Image Test"/>
+                    <div class="relative bg-[#5180c7] rounded-3xl shadow-lg p-0 w-full transform hover:scale-105 transition duration-300 ">
+                        <img class="w-full h-[200px] object-cover rounded-t-3xl" src="images/champions.jpg" alt="Image Test"/>
                         <div class="bg-white p-4 rounded-b-3xl"> <!-- Fond du texte maintenant en blanc -->
                             <div class="text-center text-black text-lg font-semibold font-['Inter']">
-                                Meilleurs Scores
+                               Champions de l’Écologie
                             </div>
                             <!-- Trait entre les textes -->
                             <div class="border-t border-black/20 my-2"></div>
                             <div class="text-center text-black text-3xl font-extrabold font-['Inter']">
-                                12502
+                                339
                             </div>
                         </div>
                     </div>
 
                     <!-- Carte 2 -->
-                    <div class="relative bg-[#5180c7] rounded-3xl shadow-lg p-0 w-full">
-                        <img class="w-full h-[200px] object-cover rounded-t-3xl" src="images/imageTest.jpg" alt="Image Test"/>
+                    <div class="relative bg-[#5180c7] rounded-3xl shadow-lg p-0 w-full transform hover:scale-105 transition duration-300">
+                        <img class="w-full h-[200px] object-cover rounded-t-3xl" src="images/regional.jpg" alt="Image Test"/>
                         <div class="bg-white p-4 rounded-b-3xl"> <!-- Fond du texte maintenant en blanc -->
                             <div class="text-center text-black text-lg font-semibold font-['Inter']">
-                                Meilleurs Scores
+                                Contribution Régionale
                             </div>
                             <!-- Trait entre les textes -->
                             <div class="border-t border-black/20 my-2"></div>
                             <div class="text-center text-black text-3xl font-extrabold font-['Inter']">
-                                12502
+                                7502
                             </div>
                         </div>
                     </div>
 
                     <!-- Carte 3 -->
-                    <div class="relative bg-[#5180c7] rounded-3xl shadow-lg p-0 w-full">
-                        <img class="w-full h-[200px] object-cover rounded-t-3xl" src="images/imageTest.jpg" alt="Image Test"/>
+                    <div class="relative bg-[#5180c7] rounded-3xl shadow-lg p-0 w-full transform hover:scale-105 transition duration-300">
+                        <img class="w-full h-[200px] object-cover rounded-t-3xl" src="images/planete.jpg" alt="Image Test"/>
                         <div class="bg-white p-4 rounded-b-3xl"> <!-- Fond du texte maintenant en blanc -->
                             <div class="text-center text-black text-lg font-semibold font-['Inter']">
-                                Meilleurs Scores
+                                Points Planète
                             </div>
                             <!-- Trait entre les textes -->
                             <div class="border-t border-black/20 my-2"></div>
                             <div class="text-center text-black text-3xl font-extrabold font-['Inter']">
-                                12502
+                                8769502
                             </div>
                         </div>
                     </div>
 
                     <!-- Carte 4 -->
-                    <div class="relative bg-[#5180c7] rounded-3xl shadow-lg p-0 w-full">
-                        <img class="w-full h-[200px] object-cover rounded-t-3xl" src="images/imageTest.jpg" alt="Image Test"/>
+                    <div class="relative bg-[#5180c7] rounded-3xl shadow-lg p-0 w-full transform hover:scale-105 transition duration-300">
+                        <img class="w-full h-[200px] object-cover rounded-t-3xl" src="images/citoyennes.jpg" alt="Image Test"/>
                         <div class="bg-white p-4 rounded-b-3xl"> <!-- Fond du texte maintenant en blanc -->
                             <div class="text-center text-black text-lg font-semibold font-['Inter']">
-                                Meilleurs Scores
+                                Score d’Éco-Citoyenneté
                             </div>
                             <!-- Trait entre les textes -->
                             <div class="border-t border-black/20 my-2"></div>
@@ -169,7 +186,7 @@
                 <!-- Grille de cartes d'actualité -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <!-- Carte 1 -->
-                    <div class="bg-[#f6fcff] rounded-3xl shadow p-4 flex flex-col items-center">
+                    <div class="bg-[#f6fcff] rounded-3xl shadow p-4 flex flex-col items-center transform hover:scale-105 transition duration-300">
                         <div class="w-full h-28 bg-[#d9d9d9] rounded-xl overflow-hidden">
                             <img class="w-full h-full object-cover" src="images/imageTest.jpg" alt="Image d'actualité"/>
                         </div>
@@ -183,7 +200,7 @@
                     </div>
 
                     <!-- Carte 2 -->
-                    <div class="bg-[#f6fbff] rounded-3xl shadow p-4 flex flex-col items-center">
+                    <div class="bg-[#f6fbff] rounded-3xl shadow p-4 flex flex-col items-center transform hover:scale-105 transition duration-300">
                         <div class="w-full h-28 bg-[#d9d9d9] rounded-xl overflow-hidden">
                             <img class="w-full h-full object-cover" src="images/imageTest.jpg" alt="Image d'actualité"/>
                         </div>
@@ -197,7 +214,7 @@
                     </div>
 
                     <!-- Carte 3 -->
-                    <div class="bg-[#f6fbff] rounded-3xl shadow p-4 flex flex-col items-center">
+                    <div class="bg-[#f6fbff] rounded-3xl shadow p-4 flex flex-col items-center transform hover:scale-105 transition duration-300">
                         <div class="w-full h-28 bg-[#d9d9d9] rounded-xl overflow-hidden">
                             <img class="w-full h-full object-cover" src="images/imageTest.jpg" alt="Image d'actualité"/>
                         </div>
@@ -211,13 +228,30 @@
                     </div>
                 </div>
 
-                <!-- Bouton "Apprendre" -->
+                <!-- Bouton "Apprendre"
                 <div class="flex justify-center mt-10">
                     <button class="w-44 h-12 bg-[#b1ca77] rounded-full text-white text-xl font-semibold tracking-widest shadow-md hover:bg-[#a1b86c]">
                         Apprendre
                     </button>
-                </div>
+                </div>-->
             </div>
+        </div>
+    </div>
+  <!-- Section Calculateur d'Empreinte Carbone -->
+    <div class="w-full max-w-2xl mx-auto text-center space-y-4 mt-12 mb-12 transform hover:scale-105 transition duration-300">
+        <h1 class="font-bold text-2xl">Calculateur d'Empreinte Carbone</h1>
+        <div class="bg-white rounded-xl shadow-xl p-6 text-justify">
+            <p class="text-black text-lg font-semibold uppercase mb-4">
+                Réduire son empreinte carbone pour un avenir durable
+            </p>
+            <p class="text-black text-base font-light">
+                L'empreinte carbone mesure la quantité de gaz à effet de serre que chaque personne, entreprise ou activité émet dans l’atmosphère. Elle prend en compte les émissions liées à notre mode de vie : transport, alimentation, consommation d’énergie, et bien plus. Réduire notre empreinte carbone est essentiel pour limiter le réchauffement climatique et protéger la planète pour les générations futures.
+                <br/><br/>
+            </p>
+            <a href="https://nosgestesclimat.fr/tutoriel" target="_blank" title="Visite siteweb"
+                class="animate-pulse px-4 py-2 flex items-center justify-center w-44 bg-[#b1ca77] text-white font-bold rounded-full hover:bg-[#8f9d6b] transition duration-300">
+                Faire le test
+                </a>
         </div>
     </div>
 
