@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello MailController!{% endblock %}
+{% block title %}NewsLetter{% endblock %}
 
 {% block body %}
 {# <style>
@@ -17,8 +17,81 @@
         <li>Your template at <code>/Users/quentinmontreuil/Documents/EcoAdventure2/templates/mail/index.html.twig</code></li>
     </ul>
 </div> #}
-<a href="{{ url('send.NewsLetter') }}">
-    Envoyer la NewsLetter
-</a>
 
+<section class="bg-[#F9F2E1] px-4 sm:px-6 lg:px-8 space-y-8 mb-20"> <!-- Ajout de mb-20 pour l'espacement -->
+    <h1 class="text-center text-[#6e6e6e] text-4xl font-semibold font-['Inter'] tracking-wide my-8">NewsLetter</h1>
+
+    <div class="py-8 lg:py-16 max-w-lg mx-auto bg-[#a4b07d] p-8 rounded-lg shadow-lg">
+        <form action="{{ path('send.NewsLetter') }}" method="post" class="space-y-6">
+            <div>
+                <input 
+                    type="text" 
+                    id="img-input"
+                    name="imgurl" 
+                    class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#8e9d6a] focus:border-[#8e9d6a] block w-full p-3" 
+                    placeholder="Lien de l'image"
+                    onchange="updateImage()"
+                    required>
+            </div>
+            <div>
+                <textarea 
+                    id="message-input" 
+                    name="message"
+                    rows="6" 
+                    class="block p-3 w-full h-96 text-sm text-gray-900 bg-white rounded-lg shadow-sm border border-gray-300 focus:ring-[#8e9d6a] focus:border-[#8e9d6a]" 
+                    placeholder="Message..." 
+                    onchange="updateMessage()" 
+                    required></textarea>
+            </div>
+            <div class="text-center">
+                <button 
+                    type="submit" 
+                    class="py-3 px-6 w-full sm:w-auto text-sm font-medium text-gray-900 bg-[#F9F2E1] rounded-lg hover:bg-[#7d895f] transition focus:ring-4 focus:outline-none focus:ring-[#8e9d6a]">
+                    Envoyer la NewsLetter
+                </button>
+            </div>
+        </form>
+    </div>
+    <h1 class="text-center text-[#6e6e6e] text-4xl font-semibold font-['Inter'] tracking-wide my-8">Prévisualisation : </h1>
+    <div class="flex justify-center w-full">
+        <html style="opacity: 1;"><head><title>NewsLetter</title><!--[if !mso]><!--><meta http-equiv="X-UA-Compatible" content="IE=edge"><!--<![endif]--><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style type="text/css">#outlook a { padding:0; }
+      body { margin:0;padding:0;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%; }
+      table, td { border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt; }
+      img { border:0;height:auto;line-height:100%; outline:none;text-decoration:none;-ms-interpolation-mode:bicubic; }
+      p { display:block;margin:13px 0; }</style><!--[if mso]>
+    <noscript>
+    <xml>
+    <o:OfficeDocumentSettings>
+      <o:AllowPNG/>
+      <o:PixelsPerInch>96</o:PixelsPerInch>
+    </o:OfficeDocumentSettings>
+    </xml>
+    </noscript>
+    <![endif]--><!--[if lte mso 11]>
+    <style type="text/css">
+      .mj-outlook-group-fix { width:100% !important; }
+    </style>
+    <![endif]--><style type="text/css">@media only screen and (min-width:480px) {
+        .mj-column-per-100 { width:100% !important; max-width: 100%; }
+.mj-column-per-50 { width:50% !important; max-width: 50%; }
+      }</style><style media="screen and (min-width:480px)">.moz-text-html .mj-column-per-100 { width:100% !important; max-width: 100%; }
+.moz-text-html .mj-column-per-50 { width:50% !important; max-width: 50%; }</style><style type="text/css">[owa] .mj-column-per-100 { width:100% !important; max-width: 100%; }
+[owa] .mj-column-per-50 { width:50% !important; max-width: 50%; }</style><style type="text/css">@media only screen and (max-width:479px) {
+      table.mj-full-width-mobile { width: 100% !important; }
+      td.mj-full-width-mobile { width: auto !important; }
+    }</style><style type="text/css"></style></head><body style="word-spacing:normal;background-color:transparent;"><div style="background-color:transparent;"><!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:600px;" width="600" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]--><div style="margin:0px auto;max-width:600px;"><table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%;"><tbody><tr><td style="direction:ltr;font-size:0px;padding:20px 0;text-align:center;"><!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" style="vertical-align:top;width:600px;" ><![endif]--><div class="mj-column-per-100 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;"><table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%"><tbody><tr><td align="center" style="font-size:0px;padding:10px 25px;word-break:break-word;"><table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;border-spacing:0px;"><tbody><tr><td style="width:100px;"><img src="https://sgr22.mjt.lu/img2/sgr22/1dd7842b-2dfe-4679-983b-038e54c3e462/content" style="border:none;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;" width="100" height="auto"></td></tr></tbody></table></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:600px;" width="600" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><v:rect style="width:600px;" xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false"><v:fill origin="0.5, 0" position="0.5, 0" src="http://191n.mj.am/tplimg/191n/b/040q/qz8w.png" type="tile" /><v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0"><![endif]--><div style="background:url('http://191n.mj.am/tplimg/191n/b/040q/qz8w.png') center top / auto no-repeat;background-position:center top;background-repeat:no-repeat;background-size:auto;margin:0px auto;max-width:600px;"><div style="line-height:0;font-size:0;"><table align="center" background="http://191n.mj.am/tplimg/191n/b/040q/qz8w.png" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:url('http://191n.mj.am/tplimg/191n/b/040q/qz8w.png') center top / auto no-repeat;background-position:center top;background-repeat:no-repeat;background-size:auto;width:100%;"><tbody><tr><td style="direction:ltr;font-size:0px;padding:20px 0;padding-bottom:40px;padding-top:40px;text-align:center;"><!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" style="vertical-align:top;width:600px;" ><![endif]--><div class="mj-column-per-100 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;"><table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%"><tbody><tr><td align="left" style="font-size:0px;padding:10px 25px;padding-top:10px;padding-bottom:0px;word-break:break-word;"><div style="font-family:Verdana, Helvetica, Arial, sans-serif;font-size:13px;line-height:1;text-align:left;color:#000000;"><p class="text-build-content" style="text-align: center; margin: 10px 0; margin-top: 10px; margin-bottom: 10px;"><span style="color:#ffffff;font-family:Trebuchet MS;font-size:32px;line-height:30px;">La NewsLetter de la semaine</span></p></div></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></tbody></table></div></div><!--[if mso | IE]></v:textbox></v:rect></td></tr></table><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:600px;" width="600" bgcolor="#f9f2e1" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]--><div style="background:#f9f2e1;background-color:#f9f2e1;margin:0px auto;max-width:600px;"><table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#f9f2e1;background-color:#f9f2e1;width:100%;"><tbody><tr><td style="direction:ltr;font-size:0px;padding:20px 0;text-align:center;"><!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" style="vertical-align:middle;width:300px;" ><![endif]--><div class="mj-column-per-50 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:middle;width:100%;"><table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:middle;" width="100%"><tbody><tr><td align="center" style="font-size:0px;padding:10px 25px;word-break:break-word;"><table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;border-spacing:0px;"><tbody><tr><td style="width:auto;height:auto"><img alt="" id="img-news" src="" style="border:none;border-radius:10px;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;" width="auto" height="400px"></td></tr></tbody></table></td></tr></tbody></table></div><!--[if mso | IE]></td><td class="" style="vertical-align:middle;width:300px;" ><![endif]--><div class="mj-column-per-50 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:middle;width:100%;"><table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:middle;" width="100%"><tbody><tr><td align="left" style="font-size:0px;padding:10px 25px;padding-top:0px;padding-bottom:0px;word-break:break-word;"><div style="font-family:Verdana, Helvetica, Arial, sans-serif;font-size:13px;line-height:1;text-align:left;color:#000000;"><p style="text-align: left; margin: 10px 0; margin-top: 10px; margin-bottom: 10px;"><span id="message" style="line-height:22px;font-size:15px;font-family:Arial;color:#5e6977;text-align:left;"></span></p></div></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:600px;" width="600" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]--><div style="margin:0px auto;max-width:600px;"><table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%;"><tbody><tr><td style="direction:ltr;font-size:0px;padding:20px 0px 20px 0px;text-align:center;"><!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" style="vertical-align:top;width:600px;" ><![endif]--><div class="mj-column-per-100 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;"><table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%"><tbody><tr><td style="vertical-align:top;padding:0;"><table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%"><tbody><tr><td align="center" style="font-size:0px;padding:10px 25px;word-break:break-word;"><div style="font-family:Verdana, Helvetica, Arial, sans-serif;font-size:11px;line-height:22px;text-align:center;color:#000000;"><p style="margin: 10px 0;"><a href="[[UNSUB_LINK_EN]]" style="color:inherit;text-decoration:none;" target="_blank"></a></p></div></td></tr><tr><td align="center" style="font-size:0px;padding:10px 25px;word-break:break-word;"><div style="font-family:Verdana, Helvetica, Arial, sans-serif;font-size:11px;line-height:22px;text-align:center;color:#000000;"><p style="margin: 10px 0;"></p></div></td></tr></tbody></table></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><![endif]--></div></body></html>
+    </div>
+</section>
+<script>
+    let message = document.getElementById('message');
+    let img = document.getElementById('img-news');
+    let inputMessage = document.getElementById('message-input');
+    let inputImg = document.getElementById('img-input');
+    function updateMessage() {
+        message.textContent = inputMessage.value;
+    }
+    function updateImage() {
+        img.src = inputImg.value;
+    }
+</script>
 {% endblock %}
