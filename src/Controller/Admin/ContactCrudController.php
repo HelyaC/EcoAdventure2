@@ -24,6 +24,10 @@ class ContactCrudController extends AbstractCrudController
            AssociationField::new('userId')
     ->setLabel('User') // Cela devrait maintenant afficher correctement les utilisateurs
     ->setFormTypeOption('choice_label', 'firstName'),
+        TextField::new('name')->setLabel('Name'),
+        TextField::new('email')->setLabel('email'), // Champ pour le sujet
+        // Champ pour le sujet
+
             TextField::new('subject')->setLabel('Subject'), // Champ pour le sujet
             TextEditorField::new('message')->setLabel('Message'), // Champ pour le message
             DateTimeField::new('submitedAt')->setLabel('Submitted At'), // Date de soumission masquée lors de la création
