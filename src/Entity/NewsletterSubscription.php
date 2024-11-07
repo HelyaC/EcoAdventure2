@@ -14,8 +14,6 @@ class NewsletterSubscription
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\ManyToOne(inversedBy: 'newsletterSubscriptions')]
-    private ?User $userId = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $email = null;
@@ -23,21 +21,12 @@ class NewsletterSubscription
     #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
     private ?\DateTimeInterface $subscribedAt = null;
 
+    #[ORM\ManyToOne(inversedBy: 'newsletterSubscriptions')]
+    private ?User $userId = null;
+
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getUserId(): ?User
-    {
-        return $this->userId;
-    }
-
-    public function setUserId(?User $userId): static
-    {
-        $this->userId = $userId;
-
-        return $this;
     }
 
     public function getEmail(): ?string
@@ -60,6 +49,18 @@ class NewsletterSubscription
     public function setSubscribedAt(?\DateTimeInterface $subscribedAt): static
     {
         $this->subscribedAt = $subscribedAt;
+
+        return $this;
+    }
+
+    public function getUserId(): ?User
+    {
+        return $this->userId;
+    }
+
+    public function setUserId(?User $userId): static
+    {
+        $this->userId = $userId;
 
         return $this;
     }

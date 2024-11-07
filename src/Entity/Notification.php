@@ -14,8 +14,7 @@ class Notification
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\ManyToOne(inversedBy: 'notifications')]
-    private ?User $userId = null;
+
 
     #[ORM\Column(type: Types::TEXT)]
     private ?string $content = null;
@@ -26,22 +25,15 @@ class Notification
     #[ORM\Column(nullable: true)]
     private ?bool $read = null;
 
+    #[ORM\ManyToOne(inversedBy: 'notifications')]
+    private ?User $userId = null;
+
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getUserId(): ?User
-    {
-        return $this->userId;
-    }
 
-    public function setUserId(?User $userId): static
-    {
-        $this->userId = $userId;
-
-        return $this;
-    }
 
     public function getContent(): ?string
     {
@@ -75,6 +67,18 @@ class Notification
     public function setRead(?bool $read): static
     {
         $this->read = $read;
+
+        return $this;
+    }
+
+    public function getUserId(): ?User
+    {
+        return $this->userId;
+    }
+
+    public function setUserId(?User $userId): static
+    {
+        $this->userId = $userId;
 
         return $this;
     }

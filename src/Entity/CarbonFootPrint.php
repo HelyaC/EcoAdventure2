@@ -14,8 +14,7 @@ class CarbonFootPrint
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\ManyToOne(inversedBy: 'carbonFootPrints')]
-    private ?User $userId = null;
+   
 
     #[ORM\Column(nullable: true)]
     private ?float $footPrintScore = null;
@@ -23,22 +22,14 @@ class CarbonFootPrint
     #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
     private ?\DateTimeInterface $calculated = null;
 
+    #[ORM\ManyToOne(inversedBy: 'carbonFootPrints')]
+    private ?User $userId = null;
+
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getUserId(): ?User
-    {
-        return $this->userId;
-    }
-
-    public function setUserId(?User $userId): static
-    {
-        $this->userId = $userId;
-
-        return $this;
-    }
 
     public function getFootPrintScore(): ?float
     {
@@ -60,6 +51,18 @@ class CarbonFootPrint
     public function setCalculated(?\DateTimeInterface $calculated): static
     {
         $this->calculated = $calculated;
+
+        return $this;
+    }
+
+    public function getUserId(): ?User
+    {
+        return $this->userId;
+    }
+
+    public function setUserId(?User $userId): static
+    {
+        $this->userId = $userId;
 
         return $this;
     }

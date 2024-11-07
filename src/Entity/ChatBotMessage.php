@@ -26,6 +26,8 @@ class ChatBotMessage
     #[ORM\ManyToOne(inversedBy: 'chatBotMessages')]
     private ?User $userId = null;
 
+    
+
     public function getId(): ?int
     {
         return $this->id;
@@ -78,4 +80,5 @@ class ChatBotMessage
 
         return $this;
     }
+
 }

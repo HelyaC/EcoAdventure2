@@ -11,21 +11,12 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
-use Symfony\Component\Form\Extension\Core\Type\TextType; // Type de champ pour texte
-use Symfony\Component\Form\Extension\Core\Type\EmailType; // Type de champ pour email
-
 
 class RegistrationFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-        ->add('firstName', TextType::class, [
-            'label' => 'First Name',
-        ])
-        ->add('lastName', TextType::class, [
-            'label' => 'Last Name',
-        ])
             ->add('email')
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,
@@ -35,7 +26,7 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ],
             ])
-            ->add('password', PasswordType::class, [
+            ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller
                 'mapped' => false,

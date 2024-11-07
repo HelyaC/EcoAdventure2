@@ -39,7 +39,7 @@ class Challenge
 
     #[ORM\ManyToOne(inversedBy: 'challenges')]
     private ?User $userId = null;
-
+    
     public function __construct()
     {
         $this->userChallenges = new ArrayCollection();
@@ -140,14 +140,14 @@ class Challenge
         return $this;
     }
 
-    public function getUserId(): ?User
+    public function getUser(): ?User
     {
-        return $this->userId;
+        return $this->user;
     }
 
-    public function setUserId(?User $userId): static
+    public function setUser(?User $userId): static
     {
-        $this->userId = $userId;
+        $this->user = $userId;
 
         return $this;
     }

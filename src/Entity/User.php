@@ -5,31 +5,41 @@ namespace App\Entity;
 use App\Repository\UserRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
-use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
-#[ORM\Table(name: '`user`')]
+#[ORM\UniqueConstraint(name: 'UNIQ_IDENTIFIER_EMAIL', fields: ['email'])]
 #[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
-class User
+class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $firstName = null;
-
-    #[ORM\Column(length: 255)]
-    private ?string $lastName = null;
-
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 180)]
     private ?string $email = null;
 
-    #[ORM\Column(length: 255)]
+    /**
+     * @var list<string> The user roles
+     */
+    #[ORM\Column]
+    private array $roles = [];
+
+    /**
+     * @var string The hashed password
+     */
+    #[ORM\Column]
     private ?string $password = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $firstName = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $lastName = null;
 
     #[ORM\Column(nullable: true)]
     private ?int $ecoScore = null;
@@ -40,8 +50,6 @@ class User
     #[ORM\Column(nullable: true)]
     private ?bool $newsletterSubscription = null;
 
-    #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
-    private ?\DateTimeInterface $createdAt = null;
 
     /**
      * @var Collection<int, DailyQuizLimit>
@@ -49,15 +57,16 @@ class User
     #[ORM\OneToMany(targetEntity: DailyQuizLimit::class, mappedBy: 'user_id')]
     private Collection $dailyQuizLimits;
 
+    
     /**
-     * @var Collection<int, ChatBotMessage>
-     */
+    * @var Collection<int, ChatBotMessage>
+    */
     #[ORM\OneToMany(targetEntity: ChatBotMessage::class, mappedBy: 'userId')]
     private Collection $chatBotMessages;
 
     /**
-     * @var Collection<int, CarbonFootPrint>
-     */
+    * @var Collection<int, CarbonFootPrint>
+    */
     #[ORM\OneToMany(targetEntity: CarbonFootPrint::class, mappedBy: 'userId')]
     private Collection $carbonFootPrints;
 
@@ -66,12 +75,6 @@ class User
      */
     #[ORM\OneToMany(targetEntity: NewsletterSubscription::class, mappedBy: 'userId')]
     private Collection $newsletterSubscriptions;
-
-    /**
-     * @var Collection<int, Role>
-     */
-    #[ORM\ManyToMany(targetEntity: Role::class, mappedBy: 'userId')]
-    private Collection $roles;
 
     /**
      * @var Collection<int, UserBadge>
@@ -121,7 +124,7 @@ class User
         $this->chatBotMessages = new ArrayCollection();
         $this->carbonFootPrints = new ArrayCollection();
         $this->newsletterSubscriptions = new ArrayCollection();
-        $this->roles = new ArrayCollection();
+        //$this->roles = new ArrayCollection();
         $this->userBadges = new ArrayCollection();
         $this->notifications = new ArrayCollection();
         $this->recommendations = new ArrayCollection();
@@ -136,30 +139,6 @@ class User
         return $this->id;
     }
 
-    public function getFirstName(): ?string
-    {
-        return $this->firstName;
-    }
-
-    public function setFirstName(string $firstName): static
-    {
-        $this->firstName = $firstName;
-
-        return $this;
-    }
-
-    public function getLastName(): ?string
-    {
-        return $this->lastName;
-    }
-
-    public function setLastName(string $lastName): static
-    {
-        $this->lastName = $lastName;
-
-        return $this;
-    }
-
     public function getEmail(): ?string
     {
         return $this->email;
@@ -172,6 +151,43 @@ class User
         return $this;
     }
 
+    /**
+     * A visual identifier that represents this user.
+     *
+     * @see UserInterface
+     */
+    public function getUserIdentifier(): string
+    {
+        return (string) $this->email;
+    }
+
+    /**
+     * @see UserInterface
+     *
+     * @return list<string>
+     */
+    public function getRoles(): array
+    {
+        $roles = $this->roles;
+        // guarantee every user at least has ROLE_USER
+        $roles[] = 'ROLE_USER';
+
+        return array_unique($roles);
+    }
+
+    /**
+     * @param list<string> $roles
+     */
+    public function setRoles(array $roles): static
+    {
+        $this->roles = $roles;
+
+        return $this;
+    }
+
+    /**
+     * @see PasswordAuthenticatedUserInterface
+     */
     public function getPassword(): ?string
     {
         return $this->password;
@@ -180,6 +196,39 @@ class User
     public function setPassword(string $password): static
     {
         $this->password = $password;
+
+        return $this;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function eraseCredentials(): void
+    {
+        // If you store any temporary, sensitive data on the user, clear it here
+        // $this->plainPassword = null;
+    }
+
+    public function getFirstName(): ?string
+    {
+        return $this->firstName;
+    }
+
+    public function setFirstName(?string $firstName): static
+    {
+        $this->firstName = $firstName;
+
+        return $this;
+    }
+
+    public function getLastName(): ?string
+    {
+        return $this->lastName;
+    }
+
+    public function setLastName(?string $lastName): static
+    {
+        $this->lastName = $lastName;
 
         return $this;
     }
@@ -220,18 +269,6 @@ class User
         return $this;
     }
 
-    public function getCreatedAt(): ?\DateTimeInterface
-    {
-        return $this->createdAt;
-    }
-
-    public function setCreatedAt(?\DateTimeInterface $createdAt): static
-    {
-        $this->createdAt = $createdAt;
-
-        return $this;
-    }
-
     /**
      * @return Collection<int, DailyQuizLimit>
      */
@@ -244,7 +281,7 @@ class User
     {
         if (!$this->dailyQuizLimits->contains($dailyQuizLimit)) {
             $this->dailyQuizLimits->add($dailyQuizLimit);
-            $dailyQuizLimit->setUserId($this);
+            $dailyQuizLimit->setUser($this);
         }
 
         return $this;
@@ -254,8 +291,8 @@ class User
     {
         if ($this->dailyQuizLimits->removeElement($dailyQuizLimit)) {
             // set the owning side to null (unless already changed)
-            if ($dailyQuizLimit->getUserId() === $this) {
-                $dailyQuizLimit->setUserId(null);
+            if ($dailyQuizLimit->getUser() === $this) {
+                $dailyQuizLimit->setUser(null);
             }
         }
 
@@ -347,33 +384,6 @@ class User
             if ($newsletterSubscription->getUserId() === $this) {
                 $newsletterSubscription->setUserId(null);
             }
-        }
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, Role>
-     */
-    public function getRoles(): Collection
-    {
-        return $this->roles;
-    }
-
-    public function addRole(Role $role): static
-    {
-        if (!$this->roles->contains($role)) {
-            $this->roles->add($role);
-            $role->addUserId($this);
-        }
-
-        return $this;
-    }
-
-    public function removeRole(Role $role): static
-    {
-        if ($this->roles->removeElement($role)) {
-            $role->removeUserId($this);
         }
 
         return $this;

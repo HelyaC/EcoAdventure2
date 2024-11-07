@@ -16,11 +16,8 @@ class UserBadge
     #[ORM\Column]
     private ?int $id = null;
 
-    /**
-     * @var Collection<int, User>
-     */
-    #[ORM\ManyToMany(targetEntity: User::class, inversedBy: 'userBadges')]
-    private Collection $userId;
+
+    
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $challengeDescription = null;
@@ -37,10 +34,16 @@ class UserBadge
     #[ORM\ManyToMany(targetEntity: Badge::class, mappedBy: 'UserBadgeId')]
     private Collection $badges;
 
+    /**
+     * @var Collection<int, User>
+     */
+    #[ORM\ManyToMany(targetEntity: User::class, mappedBy: 'userBadge')]
+    private Collection $userId;
+
     public function __construct()
     {
-        $this->userId = new ArrayCollection();
         $this->badges = new ArrayCollection();
+        $this->userId = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -48,30 +51,8 @@ class UserBadge
         return $this->id;
     }
 
-    /**
-     * @return Collection<int, User>
-     */
-    public function getUserId(): Collection
-    {
-        return $this->userId;
-    }
 
-    public function addUserId(User $userId): static
-    {
-        if (!$this->userId->contains($userId)) {
-            $this->userId->add($userId);
-        }
-
-        return $this;
-    }
-
-    public function removeUserId(User $userId): static
-    {
-        $this->userId->removeElement($userId);
-
-        return $this;
-    }
-
+    
     public function getChallengeDescription(): ?string
     {
         return $this->challengeDescription;
@@ -130,6 +111,33 @@ class UserBadge
     {
         if ($this->badges->removeElement($badge)) {
             $badge->removeUserBadgeId($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, User>
+     */
+    public function getUserId(): Collection
+    {
+        return $this->userId;
+    }
+
+    public function addUserId(User $userId): static
+    {
+        if (!$this->userId->contains($userId)) {
+            $this->userId->add($userId);
+            $userId->addUserBadge($this);
+        }
+
+        return $this;
+    }
+
+    public function removeUserId(User $userId): static
+    {
+        if ($this->userId->removeElement($userId)) {
+            $userId->removeUserBadge($this);
         }
 
         return $this;
