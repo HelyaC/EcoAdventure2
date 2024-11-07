@@ -43,6 +43,13 @@ class MailController extends AbstractController
         foreach ($subscribers as $subscriber)
         {
             $user = $userRepository->findOneById($subscriber->getUserid());
+            if ($user != null)
+            {
+                $name = $user->getlastName()." ".$user->getfirstName();
+            } else
+            {
+                $name = $subscriber->getEmail();
+            }
             $body = [
                 'Messages' => [
                     [
@@ -53,7 +60,7 @@ class MailController extends AbstractController
                         'To' => [
                             [
                                 'Email' => $subscriber->getEmail(),
-                                'Name' => $user->getLastName()." ".$user->getFirstName()
+                                'Name' => $name
                             ]
                         ],
                         'Subject' => "NewsLetter",
