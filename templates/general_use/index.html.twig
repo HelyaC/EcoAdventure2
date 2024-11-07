@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Conditions générales d'utilisation{% endblock %}
+
+{% block body %}
+
+<h1 style="text-align: center;" class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Conditions générales d'utilisation</h1>
+
+<p class="mb-6 text-lg font-normal text-lime-700 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
+Préambule : <br>
+Les présentes Conditions Générales d'Utilisation ont pour objet de définir les modalités 
+d'accès et d'utilisation du site internet EcoAdventures (ci-après le « Site »). <br>
+
+Toute connexion et utilisation du site impliquent l'acceptation sans réserve de l'intégralité des présentes CGU.
+</p>
+
+<ul class=" list-disc mb-6 text-lg font-normal text-lime-700 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
+    <li style="margin-left: 5em">J'ai plus de 18 ans</li>
+    <li style="margin-left: 5em">Je n'essaierai pas de nuire au bon fonctionnement du site à des fins malveillantes ou commerciales</li>
+    <li style="margin-left: 5em">Les cours présents sur le site sont uniquement à titre informatif et ne représentent aucunement une formation professionelle</li>
+    <li style="margin-left: 5em">Le Site peut contenir des liens hypertextes vers d'autres sites internet, l'équipe d'EcoAdventures n'est pas responsable du fonctionnement de ces autres sites référencés</li>
+    <li style="margin-left: 5em">L'utilisateur est responsable de l'utilisation qu'il fait du site. Il s'engage à respecter les lois et réglementations en vigueur et à ne pas porter atteinte aux droits de tiers.</li> 
+    <li style="margin-left: 5em">J'accepte que mon adresse e-mail soit utilisée pour me m'informer d'une éventuelle fake news ou annonce de maintenance</li>
+</ul> 
+<br>
+
+<div class="flex items-center justify-center mb-4">
+    <input 
+        id="default-checkbox" 
+        type="checkbox" 
+        value="" 
+        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+    >
+    <label 
+        for="default-checkbox"
+        class="ms-2 text-md font-medium text-gray-900 dark:text-gray-300">J'accepte les conditions générales d'utilisation ci-dessus
+    </label>
+</div>
+
+
+{% endblock %}
