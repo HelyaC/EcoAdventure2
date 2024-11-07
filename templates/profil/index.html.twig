@@ -1,0 +1,92 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Profil Utilisateur{% endblock %}
+
+{% block body %}
+<div class="bg-white px-4 sm:px-6 lg:px-8 space-y-12 py-10">
+
+    <!-- Section d'Information Personnelle -->
+    <div class="flex flex-col items-center justify-center space-y-4 mt-8">
+        <img src="images/logo.png" alt="Image du profil" class="w-40 h-40 rounded-full object-cover">
+        <h2 class="font-semibold text-gray-900 text-3xl">Information Personnel</h2>
+    </div>
+
+    <!-- Formulaire d'Informations Utilisateur -->
+<div class="bg-[#a4b07d] rounded-3xl p-6 mx-4 sm:mx-10 md:mx-20 lg:mx-40 space-y-5 mt-8">
+    <div class="space-y-5">
+        <div>
+            
+            <input type="text" placeholder="Prénom et nom" class="w-full border rounded-md shadow-sm p-2">
+        </div>
+        <div>
+            
+            <input type="email" placeholder="Email" class="w-full border rounded-md shadow-sm p-2">
+        </div>
+        <div>
+           
+            <input type="password" placeholder="Mot de passe" class="w-full border rounded-md shadow-sm p-2">
+        </div>
+    </div>
+</div>
+
+    <!-- Statistiques Utilisateur -->
+    <div class="grid grid-cols-2 gap-6 text-center mb-8 w-full max-w-md mx-auto items-center justify-center mt-8">
+        {% for i in 1..4 %}
+            <div class="bg-gray-100 rounded-lg py-4">
+                <p class="text-gray-500">55</p>
+                <p class="font-semibold">Quizzes</p>
+            </div>
+        {% endfor %}
+    </div>
+
+    <!-- Section EcoScore -->
+    <div class="bg-[#a4b07d] rounded-3xl w-full p-8 space-y-8 mt-10 mb-8">
+        <h2 class="font-semibold text-3xl text-gray-900 text-center">EcoScore</h2>
+
+        <div class="flex flex-wrap justify-around gap-4">
+            <!-- Gold Badge -->
+            <div class="bg-white shadow-lg rounded-3xl text-center p-6 px-8 space-y-2">
+                <div class="w-24 h-24 mx-auto mb-2">
+                    <div class="w-full h-full bg-gradient-to-r from-amber-500 to-amber-400 shadow-lg rounded-full"></div>
+                </div>
+                <h3 class="text-2xl font-bold text-amber-500">GOLD</h3>
+                <p class="bg-amber-300 opacity-50 rounded-lg text-black font-semibold text-2xl p-1">55</p>
+            </div>
+
+            <!-- Silver Badge -->
+            <div class="bg-white shadow-lg rounded-3xl text-center p-6 px-8 space-y-2">
+                <div class="w-24 h-24 mx-auto mb-2">
+                    <div class="w-full h-full bg-gradient-to-r from-gray-500 to-gray-400 shadow-lg rounded-full"></div>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-600">SYLVER</h3>
+                <p class="bg-gray-300 opacity-50 rounded-lg text-black font-semibold text-2xl p-1">55</p>
+            </div>
+
+            <!-- Bronze Badge -->
+            <div class="bg-white shadow-lg rounded-3xl text-center p-6 px-8 space-y-2">
+                <div class="w-24 h-24 mx-auto mb-2">
+                    <div class="w-full h-full bg-gradient-to-r from-[#d4885d] to-orange-800 shadow-lg rounded-full"></div>
+                </div>
+                <h3 class="text-2xl font-bold text-orange-[#d4885d]">BRONZE</h3>
+                <p class="bg-[#d4885d] opacity-50 rounded-lg text-black font-semibold text-2xl p-1">55</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section Calculateur d'Empreinte Carbone -->
+    <div class="w-full max-w-2xl mx-auto text-center space-y-4 mt-12 mb-12">
+        <h1 class="font-bold text-2xl">Calculateur d'Empreinte Carbone</h1>
+        <div class="bg-white rounded-xl shadow-xl p-6 text-justify">
+            <p class="text-black text-lg font-semibold uppercase mb-4">
+                Réduire son empreinte carbone pour un avenir durable
+            </p>
+            <p class="text-black text-base font-light">
+                L'empreinte carbone mesure la quantité de gaz à effet de serre que chaque personne, entreprise ou activité émet dans l’atmosphère. Elle prend en compte les émissions liées à notre mode de vie : transport, alimentation, consommation d’énergie, et bien plus. Réduire notre empreinte carbone est essentiel pour limiter le réchauffement climatique et protéger la planète pour les générations futures.
+                <br/><br/>
+                Envie de connaître votre propre empreinte carbone ? <a href="https://nosgestesclimat.fr/tutoriel" target="_blank" title="Visite siteweb" class="underline text-[#a4b07d] font-semibold">Faites le test ici</a> pour découvrir vos principaux postes d'émission et des astuces pour réduire votre impact au quotidien.
+            </p>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

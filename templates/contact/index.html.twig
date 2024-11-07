@@ -4,26 +4,26 @@
 
 {% block body %}
 
-<section class="bg-white dark:bg-gray-900 px-4 sm:px-6 lg:px-8 space-y-8 ">
+<section class="bg-white px-4 sm:px-6 lg:px-8 space-y-8 mb-20"> <!-- Ajout de mb-20 pour l'espacement -->
     <h1 class="text-center text-[#6e6e6e] text-4xl font-semibold font-['Inter'] tracking-wide my-8">Nous contacter</h1>
 
-    <div class="py-8 lg:py-16 max-w-lg mx-auto">
+    <div class="py-8 lg:py-16 max-w-lg mx-auto bg-[#a4b07d] p-8 rounded-lg shadow-lg">
         <form action="{{ path('send.contact') }}" method="post" class="space-y-6">
             <div>
                 <input 
                     type="text" 
                     id="name"
                     name="name" 
-                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#a4b07d] focus:border-[#a4b07d] block w-full p-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" 
+                    class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#8e9d6a] focus:border-[#8e9d6a] block w-full p-3" 
                     placeholder="Nom et prénom" 
                     required>
             </div>
             <div>
                 <input 
                     type="email"
-                    id="email" 
-                    name="email" 
-                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#a4b07d] focus:border-[#a4b07d] block w-full p-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" 
+                    id="email"
+                    name="email"
+                    class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#8e9d6a] focus:border-[#8e9d6a] block w-full p-3" 
                     placeholder="Email" 
                     required>
             </div>
@@ -32,7 +32,7 @@
                     type="text" 
                     id="subject"
                     name="subject" 
-                    class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-[#a4b07d] focus:border-[#a4b07d] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" 
+                    class="block p-3 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-300 shadow-sm focus:ring-[#8e9d6a] focus:border-[#8e9d6a]" 
                     placeholder="Sujet" 
                     required>
             </div>
@@ -41,14 +41,14 @@
                     id="message" 
                     name="message"
                     rows="6" 
-                    class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-[#a4b07d] focus:border-[#a4b07d] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" 
+                    class="block p-3 w-full text-sm text-gray-900 bg-white rounded-lg shadow-sm border border-gray-300 focus:ring-[#8e9d6a] focus:border-[#8e9d6a]" 
                     placeholder="Message..." 
                     required></textarea>
             </div>
             <div class="text-center">
                 <button 
                     type="submit" 
-                    class="py-3 px-6 w-80 sm:w-auto text-sm font-medium text-white bg-[#a4b07d] rounded-lg hover:bg-[#8e9d6a] transition focus:ring-4 focus:outline-none focus:ring-[#a4b07d] dark:bg-[#8e9d6a] dark:hover:bg-[#7d895f]">
+                    class="py-3 px-6 w-full sm:w-auto text-sm font-medium text-gray-900 bg-[#F9F2E1] rounded-lg hover:bg-[#7d895f] transition focus:ring-4 focus:outline-none focus:ring-[#8e9d6a]">
                     Envoyer
                 </button>
             </div>
