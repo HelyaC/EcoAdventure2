@@ -28,8 +28,8 @@ class MailController extends AbstractController
         ]);
     }
 
-    #[Route('/send-NewsLetter', name: 'send.NewsLetter')]
-    public function sendEmail(EntityManagerInterface $em): Response
+    #[Route('/send-NewsLetter', name: 'send.NewsLetter', methods: ['GET', 'POST'])]
+    public function sendEmail(EntityManagerInterface $em, Request $request): Response
     {
         $subscribers = $em->getRepository(NewsletterSubscription::class)->findAll();
         $userRepository = $em->getRepository(User::class);
@@ -37,8 +37,8 @@ class MailController extends AbstractController
         $apiSecret = $_ENV['MAILJET_API_SECRET'];
         $mailjet = new Client($apiKey, $apiSecret, true, ['version' => 'v3.1']);
         $html = $this->renderView('mail/news.html.twig', [
-            'imglink' => 'https://thumbs.dreamstime.com/b/jour-de-terre-d-environnement-dans-les-mains-des-arbres-cultivant-jeunes-plantes-bokeh-verdissent-la-main-femelle-fond-tenant-l-130247647.jpg',
-            'message' => "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est laborum enim non distinctio eaque debitis, aut reiciendis incidunt architecto deleniti, sunt vero veritatis unde error corrupti aspernatur facere quisquam repellendus!"
+            'imglink' => $request->request->get('imgurl'),
+            'message' => $request->request->get('message')
         ]);
         foreach ($subscribers as $subscriber)
         {
