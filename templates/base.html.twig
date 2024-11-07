@@ -10,8 +10,7 @@
         {{ encore_entry_link_tags('app') }}
     {% endblock %}
 </head>
-<body class="flex flex-col min-h-screen bg-gray-50">
-
+<body class="flex flex-col min-h-screen bg-[#f9f2e1]">
     <!-- Header -->
     <header class="bg-white shadow-md w-full">
         {% include 'components/naviguation/header.html.twig' %}
@@ -30,5 +29,22 @@
     {% block javascripts %}
         {{ encore_entry_script_tags('app') }}
     {% endblock %}
+
+
+            <!--Start of Tawk.to Script-->
+        <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}
+        var Tawk_LoadStart=new Date();
+        (function(){
+            var s1=document.createElement("script")
+            var s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/6729d6874304e3196add4f38/1ibtms0i6';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+        })();
+        </script>
+        <!--End of Tawk.to Script-->
 </body>
 </html>
