@@ -178,67 +178,36 @@
             </div>
         </div>
 
-        <!-- DIV N4 -->
-        <div class="w-full bg-[#A4B07D] py-10 px-4">
-            <div class="w-full max-w-[90%] sm:max-w-[80%] md:max-w-[70%] lg:max-w-[60%] xl:max-w-[50%] mx-auto px-4">
-                <!-- Titre principal -->
-                <div class="text-center text-[#0f0d06] text-4xl md:text-5xl lg:text-6xl font-semibold tracking-wide mb-10">
-                    Dernières nouvelles
+
+<div class="text-center text-[#0f0d06] text-4xl md:text-5xl lg:text-6xl font-semibold tracking-wide mb-10">
+    Dernières nouvelles
+</div>
+
+<section class="relative p-4 flex justify-center w-full bg-[#A4B07D] py-10 px-4">
+
+    <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full max-w-7xl">
+    
+        {# Boucle sur les dernières actualités pour créer une carte pour chaque élément #}
+        {% for item in lastNews %}
+            <div class="bg-[#f6fcff] rounded-3xl shadow p-4 flex flex-col items-center transform hover:scale-105 transition duration-300">
+                <div class="w-full h-40 bg-[#d9d9d9] rounded-xl overflow-hidden">
+                    <img class="w-full h-full object-cover" src="{{ asset('uploads/images/' ~ item.imgUrl) }}" alt="Image de l'actualité"/>
                 </div>
-
-                <!-- Grille de cartes d'actualité -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Carte 1 -->
-                    <div class="bg-[#f6fcff] rounded-3xl shadow p-4 flex flex-col items-center transform hover:scale-105 transition duration-300">
-                        <div class="w-full h-28 bg-[#d9d9d9] rounded-xl overflow-hidden">
-                            <img class="w-full h-full object-cover" src="images/imageTest.jpg" alt="Image d'actualité"/>
-                        </div>
-                        <div class="text-black text-lg font-semibold font-['Inter'] mt-4 text-center">
-                            13 millions d’hectares de forêts disparaissent chaque année.
-                        </div>
-                        <div class="flex justify-between w-full text-[#6c6c6c] text-sm font-semibold font-['Inter'] mt-2">
-                            <div>#srilanka #railway #newtrack</div>
-                            <div>2023-05-06</div>
-                        </div>
-                    </div>
-
-                    <!-- Carte 2 -->
-                    <div class="bg-[#f6fbff] rounded-3xl shadow p-4 flex flex-col items-center transform hover:scale-105 transition duration-300">
-                        <div class="w-full h-28 bg-[#d9d9d9] rounded-xl overflow-hidden">
-                            <img class="w-full h-full object-cover" src="images/imageTest.jpg" alt="Image d'actualité"/>
-                        </div>
-                        <div class="text-black text-lg font-semibold font-['Inter'] mt-4 text-center">
-                            La pollution de l’air tue 7 millions de personnes par an.
-                        </div>
-                        <div class="flex justify-between w-full text-[#6c6c6c] text-sm font-semibold font-['Inter'] mt-2">
-                            <div>#Sri Lanka #reservation</div>
-                            <div>2023-05-06</div>
-                        </div>
-                    </div>
-
-                    <!-- Carte 3 -->
-                    <div class="bg-[#f6fbff] rounded-3xl shadow p-4 flex flex-col items-center transform hover:scale-105 transition duration-300">
-                        <div class="w-full h-28 bg-[#d9d9d9] rounded-xl overflow-hidden">
-                            <img class="w-full h-full object-cover" src="images/imageTest.jpg" alt="Image d'actualité"/>
-                        </div>
-                        <div class="text-black text-lg font-semibold font-['Inter'] mt-4 text-center">
-                            8 millions de tonnes de plastique finissent dans les océans chaque année.
-                        </div>
-                        <div class="flex justify-between w-full text-[#6c6c6c] text-sm font-semibold font-['Inter'] mt-2">
-                            <div>#Sri Lanka #newtrain #railway</div>
-                            <div>2023-05-06</div>
-                        </div>
-                    </div>
+                <div class="text-black text-lg font-semibold font-['Inter'] mt-4 text-center">
+                    {{ item.Content|striptags|slice(0, 100) ~ '...' }}
                 </div>
-
-                <!-- Bouton "Apprendre"
-                <div class="flex justify-center mt-10">
-                    <button class="w-44 h-12 bg-[#b1ca77] rounded-full text-white text-xl font-semibold tracking-widest shadow-md hover:bg-[#a1b86c]">
-                        Apprendre
-                    </button>
-                </div>-->
+                <div class="flex justify-between w-full text-[#6c6c6c] text-sm font-semibold font-['Inter'] mt-2">
+                    <div>{{ item.createdAt|date('Y-m-d') }}</div>
+                </div>
             </div>
-        </div>
+        {% else %}
+            <p>Aucune actualité disponible pour le moment.</p>
+        {% endfor %}
+    </div>
+</section>
+
+  
+
     </div>
   <!-- Section Calculateur d'Empreinte Carbone -->
     <div class="w-full max-w-2xl mx-auto text-center space-y-4 mt-12 mb-12 transform hover:scale-105 transition duration-300">
