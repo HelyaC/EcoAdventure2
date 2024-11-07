@@ -5,76 +5,90 @@
 {% block body %}
 
     <div class="flex justify-center flex-col items-center">
-
-        <!-- DIV N1 -->
-    <div class="relative w-full py-10 flex justify-center items-center">
-    <img class="w-full max-w-screen-lg h-auto object-cover rounded-md" src="images/frontDiv1.png" alt="Random image">
-
-    
-
-    <!-- Texte centré et responsive -->
-    <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
-        <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-bold">EcoAdventure</h1>
-        <p class="text-white text-lg md:text-2xl lg:text-3xl mt-2">Agissons ensemble pour préserver notre planète</p>
-    </div>
+<div class="relative w-full bg-[#F9F2E1] py-10 flex justify-center items-center">
+    <img class="w-full max-w-screen-lg h-auto object-cover rounded-md" src="/images/front.jpg" alt="Random image">
 </div>
-<!-- DIV N2 -->
-<div class="w-full bg-[#CFD897] py-10">
-    <div class="text-center text-[#0f0d06] text-3xl sm:text-4xl md:text-5xl lg:text-[64px] font-semibold tracking-wide">
-        A savoir
-    </div>
 
-    <div class="flex justify-center py-10">
-        <!-- Conteneur en grille pour les cartes, avec disposition responsive -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            <!-- Première carte -->
-            <div class="relative flex flex-col sm:flex-row w-full max-w-md h-auto bg-gray-300 rounded-2xl p-4 shadow-lg">
-                <div class="w-full sm:w-24 h-32 sm:h-full bg-gray-400 rounded-2xl flex-shrink-0"></div>
-                <div class="mt-4 sm:mt-0 sm:ml-4 flex flex-col justify-between">
-                    <div class="text-black text-lg font-medium leading-tight">
-                        Lorem ipsum dolor sit amet
+        <!-- DIV N2 -->
+        <div class="w-full bg-[#CFD897] py-10">
+            <div class="text-center text-[#0f0d06] text-3xl sm:text-4xl md:text-5xl lg:text-[64px] font-semibold tracking-wide">
+                A savoir
+            </div>
+            <div class="flex justify-center py-10 px-4 sm:px-6 lg:px-8">
+                <!-- Conteneur en grille pour les cartes, avec disposition responsive -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+                    <!-- Première carte -->
+                    <div class="relative flex flex-col sm:flex-row w-full max-w-md h-auto bg-gray-300 rounded-2xl p-4 shadow-lg">
+                        <!-- Image plus large -->
+                        <img class="w-full sm:w-1/2 h-48 sm:h-64 object-cover rounded-2xl flex-shrink-0"
+                             src="images/windmill-5591464_1280.jpg" alt="Description de l'image">
+
+                        <div class="mt-4 sm:mt-0 sm:ml-4 flex flex-col justify-between">
+                            <div class="text-black text-lg font-medium leading-tight">
+                                Comprendre le Changement Climatique : Causes, Impacts et Solutions
+                            </div>
+                            <div>
+                                Le changement climatique est un phénomène écologique causé principalement par
+                                l'augmentation des gaz à effet de serre, comme le dioxyde de carbone (CO₂), dans
+                                l'atmosphère...
+                            </div>
+                            <div class="flex flex-row gap-4 text-sm text-gray-500 font-medium tracking-tight">
+                                <div>2023 / 01 / 01</div>
+                                <!-- Lien "voir plus" -->
+                                <a href="URL_DE_TON_LIEN" class="text-blue-500 hover:underline">Voir plus</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="flex flex-row gap-4 text-sm text-gray-500 font-medium tracking-tight">
-                        <div>2023 / 01 / 01</div>
-                        <div>#world #tech</div>
+
+                    <!-- Deuxième carte -->
+                    <div class="relative flex flex-col sm:flex-row w-full max-w-md h-auto bg-gray-300 rounded-2xl p-4 shadow-lg">
+                        <!-- Image plus large -->
+                        <img class="w-full sm:w-1/2 h-48 sm:h-64 object-cover rounded-2xl flex-shrink-0"
+                             src="images/tortue.jpg" alt="Description de l'image">
+
+                        <div class="mt-4 sm:mt-0 sm:ml-4 flex flex-col justify-between">
+                            <div class="text-black text-lg font-medium leading-tight">
+                                La Pollution Plastique : Enjeux et Solutions
+                            </div>
+                            <div>
+                                La pollution plastique est un problème écologique majeur, causé par la production
+                                massive de plastiques à usage unique et leur mauvaise gestion en fin de vie...
+                            </div>
+                            <div class="flex flex-row gap-4 text-sm text-gray-500 font-medium tracking-tight">
+                                <div>2023 / 01 / 01</div>
+                                <a href="URL_DE_TON_LIEN" class="text-blue-500 hover:underline">Voir plus</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Troisième carte -->
+                    <div class="relative flex flex-col sm:flex-row w-full max-w-md h-auto bg-gray-300 rounded-2xl p-4 shadow-lg">
+                        <!-- Image plus large -->
+                        <img class="w-full sm:w-1/2 h-48 sm:h-64 object-cover rounded-2xl flex-shrink-0"
+                             src="images/Deforestation.jpg" alt="Description de l'image">
+
+                        <div class="mt-4 sm:mt-0 sm:ml-4 flex flex-col justify-between">
+                            <div class="text-black text-lg font-medium leading-tight">
+                                La Déforestation : Impacts et Solutions
+                            </div>
+                            <div>
+                                La déforestation est la destruction des forêts, souvent pour créer des terres agricoles,
+                                obtenir du bois ou développer des infrastructures...
+                            </div>
+                            <div class="flex flex-row gap-4 text-sm text-gray-500 font-medium tracking-tight">
+                                <div>2023 / 01 / 01</div>
+                                <a href="URL_DE_TON_LIEN" class="text-blue-500 hover:underline">Voir plus</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Deuxième carte -->
-            <div class="relative flex flex-col sm:flex-row w-full max-w-md h-auto bg-gray-300 rounded-2xl p-4 shadow-lg">
-                <div class="w-full sm:w-24 h-32 sm:h-full bg-gray-400 rounded-2xl flex-shrink-0"></div>
-                <div class="mt-4 sm:mt-0 sm:ml-4 flex flex-col justify-between">
-                    <div class="text-black text-lg font-medium leading-tight">
-                        Lorem ipsum dolor sit amet
-                    </div>
-                    <div class="flex flex-row gap-4 text-sm text-gray-500 font-medium tracking-tight">
-                        <div>2023 / 01 / 01</div>
-                        <div>#world #tech</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Troisième carte -->
-            <div class="relative flex flex-col sm:flex-row w-full max-w-md h-auto bg-gray-300 rounded-2xl p-4 shadow-lg">
-                <div class="w-full sm:w-24 h-32 sm:h-full bg-gray-400 rounded-2xl flex-shrink-0"></div>
-                <div class="mt-4 sm:mt-0 sm:ml-4 flex flex-col justify-between">
-                    <div class="text-black text-lg font-medium leading-tight">
-                        Lorem ipsum dolor sit amet
-                    </div>
-                    <div class="flex flex-row gap-4 text-sm text-gray-500 font-medium tracking-tight">
-                        <div>2023 / 01 / 01</div>
-                        <div>#world #tech</div>
-                    </div>
-                </div>
+            <div class="flex justify-center text-center text-[#717171] text-base sm:text-lg font-medium tracking-tight px-4">
+                Venez en apprendre davantage sur l'écologie pour donner le meilleur de nous-mêmes et progresser
+                constamment.
             </div>
         </div>
-    </div>
-
-    <div class="flex justify-center text-center text-[#717171] text-base sm:text-lg font-medium tracking-tight px-4">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor
-    </div>
-</div>
 
         <!-- DIV N3 -->
         <div class="w-full bg-[#F9F2E1] py-10">
@@ -217,7 +231,7 @@
                     </div>
                 </div>
 
-                <!-- Bouton "Apprendre" 
+                <!-- Bouton "Apprendre"
                 <div class="flex justify-center mt-10">
                     <button class="w-44 h-12 bg-[#b1ca77] rounded-full text-white text-xl font-semibold tracking-widest shadow-md hover:bg-[#a1b86c]">
                         Apprendre
@@ -235,13 +249,14 @@
             </p>
             <p class="text-black text-base font-light">
                 L'empreinte carbone mesure la quantité de gaz à effet de serre que chaque personne, entreprise ou activité émet dans l’atmosphère. Elle prend en compte les émissions liées à notre mode de vie : transport, alimentation, consommation d’énergie, et bien plus. Réduire notre empreinte carbone est essentiel pour limiter le réchauffement climatique et protéger la planète pour les générations futures.
-                <br/><br/>               
+                <br/><br/>
             </p>
-            <a href="https://nosgestesclimat.fr/tutoriel" target="_blank" title="Visite siteweb" 
+            <a href="https://nosgestesclimat.fr/tutoriel" target="_blank" title="Visite siteweb"
                 class="animate-pulse px-4 py-2 flex items-center justify-center w-44 bg-[#b1ca77] text-white font-bold rounded-full hover:bg-[#8f9d6b] transition duration-300">
                 Faire le test
                 </a>
         </div>
     </div>
+
 
 {% endblock %}
