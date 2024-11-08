@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 namespace App\Controller\Admin;
 
@@ -20,7 +20,6 @@ class NotificationCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id')->hideOnForm(), // Masquer l'ID lors de la création/modification
             
             // Association avec l'entité User
             AssociationField::new('userId')
@@ -35,10 +34,6 @@ class NotificationCrudController extends AbstractCrudController
             DateTimeField::new('sentAt')
                 ->setLabel('Sent At')
                 ->setFormat('yyyy-MM-dd HH:mm:ss'), // Format de la date
-            
-            // Champ pour le statut de lecture
-            BooleanField::new('read')
-                ->setLabel('isRead'),
         ];
     }
 }
