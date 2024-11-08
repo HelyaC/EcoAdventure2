@@ -173,99 +173,39 @@
             <div class="bg-[#f9f2e1] rounded-[30px] p-6 flex flex-col gap-6 shadow-xl hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out w-full">
 
                 <!-- Ligne du haut -->
-                <div class="flex flex-col sm:flex-row sm:justify-between items-center text-center sm:text-left gap-6 sm:gap-12">
+                <div class="flex flex-col sm:justify-between items-center text-center sm:text-left gap-6 sm:gap-12">
                     <!-- Nom du challenge -->
                     <div class="flex-1 text-black text-xl font-semibold uppercase tracking-wider">
                         Crée par : <span class="text-[#A4B07D]">{{ challengerName }}</span>
                     </div>
 
-                    <!-- Carte N2 -->
-                    <div class="w-full h-auto bg-[#f9f2e1] rounded-[30px] p-6 flex flex-col gap-4">
-                        <div class="flex justify-between items-center">
-                            <div class="text-center text-black text-base font-semibold uppercase tracking-wider">
-                                "Zéro Déchet"
-                            </div>
-                            <div class="text-black text-base font-semibold tracking-wider text-center">
-                                Réduire les déchets à un minimum pendant une semaine.
-                            </div>
-                            <div class="text-black text-base font-semibold tracking-wider">
-                                POINTS
-                            </div>
-                        </div>
-                        <div class="flex justify-between items-center mt-4 bg-[#A4B07D] text-white p-4 rounded-[15px]">
-                            <div class="text-base font-semibold tracking-wider">
-                                Niveau : 1 | 2 | 3
-                            </div>
-                            <div class="text-base font-semibold tracking-wider">
-                                Fréquence : <span class="uppercase">hebdomadaire</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <button class="bg-[#d9d9d9] text-[#0f0d06] text-sm font-semibold tracking-wider rounded-[15px] px-4 py-1 hover:bg-[#c0c0c0] transition">
-                                    ENVOYER A UN AMI
-                                </button>
-                            </div>
-                        </div>
+                    <!-- Description -->
+                    <div class="flex-1 text-center text-black text-base font-medium tracking-wide">
+                        {{ challenge.description|raw }}
                     </div>
 
-                    <!-- Carte N3 -->
-                    <div class="w-full h-auto bg-[#f9f2e1] rounded-[30px] p-6 flex flex-col gap-4">
-                        <div class="flex justify-between items-center">
-                            <div class="text-center text-black text-base font-semibold uppercase tracking-wider">
-                                "CUISINE PLUS DURABLE"
-                            </div>
-                            <div class="text-black text-base font-semibold tracking-wider text-center">
-                                Cuisiner des produits de saison, en circuit court et sans emballage.
-                            </div>
-                            <div class="text-black text-base font-semibold tracking-wider">
-                                POINTS
-                            </div>
-                        </div>
-                        <div class="flex justify-between items-center mt-4 bg-[#A4B07D] text-white p-4 rounded-[15px]">
-                            <div class="text-base font-semibold tracking-wider">
-                                Niveau : 1 | 2 | 3
-                            </div>
-                            <div class="text-base font-semibold tracking-wider">
-                                Fréquence : <span class="uppercase">mensuel</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <button class="bg-[#d9d9d9] text-[#0f0d06] text-sm font-semibold tracking-wider rounded-[15px] px-4 py-1 hover:bg-[#c0c0c0] transition">
-                                    ENVOYER A UN AMI
-                                </button>
-                            </div>
-                        </div>
-                    </div>
 
-                    <!-- Carte N4 -->
-                    <div class="w-full h-auto bg-[#f9f2e1] rounded-[30px] p-6 flex flex-col gap-4">
-                        <div class="flex justify-between items-center">
-                            <div class="text-center text-black text-base font-semibold uppercase tracking-wider">
-                                "Engagement pour l'environnement"
-                            </div>
-                            <div class="text-black text-base font-semibold tracking-wider text-center">
-                                Aider une association écologique.
-                            </div>
-                            <div class="text-black text-base font-semibold tracking-wider">
-                                POINTS
-                            </div>
-                        </div>
-                        <div class="flex justify-between items-center mt-4 bg-[#A4B07D] text-white p-4 rounded-[15px]">
-                            <div class="text-base font-semibold tracking-wider">
-                                Niveau : 1 | 2 | 3
-                            </div>
-                            <div class="text-base font-semibold tracking-wider">
-                                Fréquence : <span class="uppercase">annuel</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <button class="bg-[#d9d9d9] text-[#0f0d06] text-sm font-semibold tracking-wider rounded-[15px] px-4 py-1 hover:bg-[#c0c0c0] transition">
-                                    ENVOYER A UN AMI
-                                </button>
-                            </div>
-                        </div>
+                <!-- Ligne du bas -->
+                <div class="flex flex-col justify-between items-center mt-4 bg-[#A4B07D] text-white p-4 rounded-[15px]">
+                    <div class="text-base font-semibold tracking-wider">
+                        <strong>Niveau :</strong> {{ challenge.level }}
+                    </div>
+                    <div class="text-base font-semibold tracking-wider">
+                        <strong>Fréquence :</strong> <span class="uppercase">{{ challenge.frequence }}</span>
+                    </div>
+                    <div class="flex items-center gap-2 mt-4 sm:mt-0">
+                        <button class="bg-[#d9d9d9] text-[#0f0d06] text-sm font-semibold tracking-wider rounded-[15px] px-6 py-2 hover:bg-[#c0c0c0] transition duration-200">
+                            ENVOYER À UN AMI
+                        </button>
                     </div>
                 </div>
             </div>
-        </div>
+        {% endfor %}
     </div>
+</div>
+
+
+
 
 
 {% endblock %}
