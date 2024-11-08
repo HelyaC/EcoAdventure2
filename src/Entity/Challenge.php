@@ -49,6 +49,7 @@ class Challenge
     #[ORM\Column(length: 255)]
     private ?string $frequence = null;
 
+
     public function __construct()
     {
         $this->userChallenges = new ArrayCollection();
@@ -160,8 +161,7 @@ class Challenge
 
         return $this;
     }
-
-    public function getWinNumber(): ?int
+ public function getWinNumber(): ?int
     {
         return $this->winNumber;
     }
@@ -196,4 +196,5 @@ class Challenge
 
         return $this;
     }
+    
 }

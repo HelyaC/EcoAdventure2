@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello QuizController!{% endblock %}
+{% block body %}
+{% if number == 1 %}
+    {% set sheetid = '1gE3FE9NBHwqacKjKFLZ5d75lfFiMQsvz9DAoLfrIPhg' %}
+{% elseif number == 2 %}
+    {% set sheetid = '1cP7jRPE1FvUvyyryDVV5gE9gjXwulIGJuhRNJuupxiU' %}
+{% elseif number == 3 %}
+    {% set sheetid = '1n7b2wB-3sG5SFS97axNA0t_9q7SxS3oQpdHenxSwysY' %}
+{% elseif number == 4 %}
+    {% set sheetid = '1QZLM1BvVC2TZaIfIVHwg-RWMj1BWayTYt8YKBwzxg6w' %}
+{% elseif number == 5 %}
+    {% set sheetid = '1h1w3iEi4SGwUZe4XZ0B4oolH6Aq9a3LuAXi-SFqRd7o' %}
+{% elseif number == 6 %}
+    {% set sheetid = '18v644QJoSSlCvS5Foslz7NBHZNY7FWh6LGtSy_zTmtE' %}
+{% endif %}
+
+<div class="flex flex-col items-center p-8">
+ <a href="{{ path('app_quiz_score', {sid : sheetid} ) }}" class="bg-[#B1CA77] text-white px-6 py-2 rounded-full hover:bg-[#A4B07D] transition">
+    Valider le score
+</a>
+<br>
+{% if number == 1 %}
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdN92dPQxQTQZDvjEBLi6lsqaOpJsz5biXwrt1I5ODlB1wTQA/viewform?embedded=true" width="640" height="3194" frameborder="0" marginheight="0" marginwidth="0">Chargement…</iframe>
+{% elseif number == 2 %}
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfpvdL3rAVcCrhMybgYW-doXRCkEWLUHoS3n4xHw-URhuVR4A/viewform?embedded=true" width="640" height="3194" frameborder="0" marginheight="0" marginwidth="0">Chargement…</iframe>
+{% elseif number == 3 %}
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfo1cHb5LK0YKxvy5K5XXguFHkAuKg5HthpD2CkDmCQx3nR9Q/viewform?embedded=true" width="640" height="3238" frameborder="0" marginheight="0" marginwidth="0">Chargement…</iframe>
+{% elseif number == 4 %}
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScDyhauKi0kCwdFj0bmVINPTCCBzX8H-Yt6aLbXoJUuPBtYoQ/viewform?embedded=true" width="640" height="3238" frameborder="0" marginheight="0" marginwidth="0">Chargement…</iframe>
+{% elseif number == 5 %}
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc19GYLTmcEHSt8Wuh6YEuU0jIxU8TRV3vIYYV6Vt7o1Sg-1Q/viewform?embedded=true" width="640" height="3238" frameborder="0" marginheight="0" marginwidth="0">Chargement…</iframe>
+{% elseif number == 6 %}
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeWxPuXORjrCwowqRibMgKk1sKZlkNQJq6IVDlCdGP1g1ePyw/viewform?embedded=true" width="640" height="3150" frameborder="0" marginheight="0" marginwidth="0">Chargement…</iframe>
+{% endif %}
+
+</div>
+{% endblock %}
