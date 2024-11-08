@@ -32,6 +32,9 @@ class Contact
     #[ORM\Column(length: 2555)]
     private ?string $email = null;
 
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    private ?string $response = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -105,6 +108,18 @@ class Contact
     public function setEmail(string $email): static
     {
         $this->email = $email;
+
+        return $this;
+    }
+
+    public function getResponse(): ?string
+    {
+        return $this->response;
+    }
+
+    public function setResponse(?string $response): static
+    {
+        $this->response = $response;
 
         return $this;
     }

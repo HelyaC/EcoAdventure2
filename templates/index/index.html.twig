@@ -6,7 +6,7 @@
 
     <div class="flex justify-center flex-col items-center">
 <div class="relative w-full bg-[#F9F2E1] py-10 flex justify-center items-center">
-    <img class="w-full max-w-screen-lg h-auto object-cover rounded-md" src="/images/front.jpg" alt="Random image">
+    <img class="w-full max-w-screen-lg h-auto object-cover rounded-md" src="/images/acceuil.jpg" alt="Random image">
 </div>
         <!-- DIV N2 -->
         <div class="w-full bg-[#CFD897] py-10">
@@ -197,7 +197,7 @@
                     <img class="w-full h-full object-cover" src="{{ asset('uploads/images/' ~ item.imgUrl) }}" alt="Image de l'actualité"/>
                 </div>
                 <div class="text-black text-lg font-semibold font-['Inter'] mt-4 text-center">
-                    {{ item.Content|striptags|slice(0, 100) ~ '...' }}
+                    {{ item.Content|striptags|slice(0, 100) }}
                 </div>
                 <div class="flex justify-between w-full text-[#6c6c6c] text-sm font-semibold font-['Inter'] mt-2">
                     <div>{{ item.createdAt|date('Y-m-d') }}</div>

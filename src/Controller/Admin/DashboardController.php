@@ -45,13 +45,15 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('User Badges', 'fa fa-award', UserBadge::class);
         yield MenuItem::linkToCrud('User Challenges', 'fas fa-medal', UserChallenge::class);
         yield MenuItem::linkToCrud('Roles', 'fas fa-user-tag', Role::class);
-        yield MenuItem::linkToCrud('Recommendations', 'fas fa-comments', Recommendation::class);
+        yield MenuItem::linkToCrud('Badges des Utilisateurs', 'fa fa-award', UserBadge::class);
+        // yield MenuItem::linkToCrud('Challenges des Utilisateurs', 'fas fa-medal', UserChallenge::class);
+        yield MenuItem::linkToCrud('Recommandations', 'fas fa-comments', Recommendation::class);
         yield MenuItem::linkToCrud('Notifications', 'fas fa-bell', Notification::class);
         yield MenuItem::linkToCrud('Newsletter Subscriptions', 'fas fa-envelope', NewsletterSubscription::class);
         yield MenuItem::linkToCrud('Cours', 'fas fa-book', Cours::class);
         yield MenuItem::linkToCrud('Contacts', 'fas fa-envelope', Contact::class);
         yield MenuItem::linkToCrud('Challenges', 'fa fa-trophy', Challenge::class);
-        yield MenuItem::linkToCrud('Empreinte Carbone', 'fa fa-leaf', CarbonFootPrint::class); 
+        // yield MenuItem::linkToCrud('Empreinte Carbone', 'fa fa-leaf', CarbonFootPrint::class);
         yield MenuItem::linkToCrud('Badges', 'fas fa-trophy', Badge::class);
         yield MenuItem::linkToCrud('Dernières Nouvelles', 'fa fa-newspaper', LastNews::class);
 
