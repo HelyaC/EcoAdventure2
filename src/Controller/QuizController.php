@@ -37,7 +37,6 @@ class QuizController extends AbstractController
     $range = 'Réponses au formulaire 1!B2';
     $response = $service->spreadsheets_values->get($spreadsheetId, $range);
     $values = $response->getValues();
-
     if ($values != null) {
         $score = $values[0][0];
         list($score,$total) = explode('/', $score);
@@ -61,13 +60,19 @@ class QuizController extends AbstractController
                 ]
             ]
         ]);
-
-        // Exécuter la requête de suppression
         $service->spreadsheets->batchUpdate($spreadsheetId, $requestBody);
+        
+        if (isset($_COOKIE["score"])) {
+            $_COOKIE["score"] = $_COOKIE["score"] + $score;
+            setcookie("score", $_COOKIE["score"], time() + (365 * 24 * 60 * 60), "/");
+        } else {
+            setcookie("score", $score, time() + (365 * 24 * 60 * 60), "/");
+        }
     } else {
         $message = 'Merci de répondre à tous les questions pour calculer votre score';
     }
 
-    return new Response($message);
+    return $this->redirectToRoute('app_index');
+    // return new Response($_COOKIE["score"].' '.$score." Old :".$cookieOld.' '.$scoreOld);
 }
 }

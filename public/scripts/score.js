@@ -1,4 +1,5 @@
         let score = document.getElementById('score');
+        console.log(score);
         let scoreValue = parseInt(score.textContent);
         function delayLoop(i) {
             if (i <= scoreValue) { 

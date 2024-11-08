@@ -3,24 +3,24 @@
 {% block title %}Hello QuizController!{% endblock %}
 {% block body %}
 {% if number == 1 %}
-    {% set sheetid = '1H-RmiAmwV6gk252ySpJvUgKRBv02MfG3Q5SNaibvjkE' %}
+    {% set sheetid = '1gE3FE9NBHwqacKjKFLZ5d75lfFiMQsvz9DAoLfrIPhg' %}
 {% elseif number == 2 %}
-    {% set sheetid = '1Y5ODyWQJ9SXsGzfDYdNDjJZ7jhksswV1kyAX3inmRnA' %}
+    {% set sheetid = '1cP7jRPE1FvUvyyryDVV5gE9gjXwulIGJuhRNJuupxiU' %}
 {% elseif number == 3 %}
-    {% set sheetid = '1Y5ODyWQJ9SXsGzfDYdNDjJZ7jhksswV1kyAX3inmRnA' %}
+    {% set sheetid = '1n7b2wB-3sG5SFS97axNA0t_9q7SxS3oQpdHenxSwysY' %}
 {% elseif number == 4 %}
-    {% set sheetid = '1Y5ODyWQJ9SXsGzfDYdNDjJZ7jhksswV1kyAX3inmRnA' %}
+    {% set sheetid = '1QZLM1BvVC2TZaIfIVHwg-RWMj1BWayTYt8YKBwzxg6w' %}
 {% elseif number == 5 %}
-    {% set sheetid = '1Y5ODyWQJ9SXsGzfDYdNDjJZ7jhksswV1kyAX3inmRnA' %}
+    {% set sheetid = '1h1w3iEi4SGwUZe4XZ0B4oolH6Aq9a3LuAXi-SFqRd7o' %}
 {% elseif number == 6 %}
-    {% set sheetid = '1Y5ODyWQJ9SXsGzfDYdNDjJZ7jhksswV1kyAX3inmRnA' %}
+    {% set sheetid = '18v644QJoSSlCvS5Foslz7NBHZNY7FWh6LGtSy_zTmtE' %}
 {% endif %}
 
 <div class="flex flex-col items-center p-8">
- <a href="{{ path('app_quiz', {sid : sheetid} ) }}" class="bg-[#B1CA77] text-white px-6 py-2 rounded-full hover:bg-[#A4B07D] transition">
+ <a href="{{ path('app_quiz_score', {sid : sheetid} ) }}" class="bg-[#B1CA77] text-white px-6 py-2 rounded-full hover:bg-[#A4B07D] transition">
     Valider le score
 </a>
-{{ sheetid }}
+<br>
 {% if number == 1 %}
     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdN92dPQxQTQZDvjEBLi6lsqaOpJsz5biXwrt1I5ODlB1wTQA/viewform?embedded=true" width="640" height="3194" frameborder="0" marginheight="0" marginwidth="0">Chargement…</iframe>
 {% elseif number == 2 %}
