@@ -21,8 +21,8 @@
 
         <!-- DIV N2 -->
         <div class="w-full bg-[#F9F2E1] py-10">
-            <div class="max-w-6xl mx-auto mb-6">
-                <h2 class="text-4xl font-bold text-left ml-2">
+            <div class="max-w-6xl mx-auto mb-6 ">
+                <h2 class="text-4xl  font-bold  ml-2">
                     Quiz Planète Verte
                 </h2>
             </div>
@@ -42,7 +42,7 @@
                         <div class="mt-4 text-center">
                             <div class="text-base font-semibold mt-2">Débutant</div>
                             <br>
-                            <a href="{{ path('app_quiz', {number : 1} ) }}" class="bg-[#B1CA77] text-white px-6 py-2 rounded-full hover:bg-[#A4B07D] transition">
+                            <a href="https://forms.gle/eNnNqUvC7UBoZ9ze8" target="_blank" class="bg-[#B1CA77] text-white px-6 py-2 rounded-full hover:bg-[#A4B07D] transition">
                                 Commencer
                             </a>
                         </div>
@@ -63,7 +63,7 @@
                         <div class="mt-4 text-center">
                             <div class="text-base font-semibold mt-2">Intermédiaire</div>
                             <br>
-                            <a href="{{ path('app_quiz', {number : 2} ) }}" class="bg-[#B1CA77] text-white px-6 py-2 rounded-full hover:bg-[#A4B07D] transition">
+                            <a href="https://forms.gle/hkbxkF8e18DUED2K8" target="_blank" class="bg-[#B1CA77] text-white px-6 py-2 rounded-full hover:bg-[#A4B07D] transition">
                                 Commencer
                             </a>
                         </div>
@@ -84,7 +84,7 @@
                         <div class="mt-4 text-center">
                             <div class="text-base font-semibold mt-2">Intermédiaire</div>
                             <br>
-                            <a href="{{ path('app_quiz', {number : 3} ) }}" class="bg-[#B1CA77] text-white px-6 py-2 rounded-full hover:bg-[#A4B07D] transition">
+                            <a href="https://forms.gle/xLLab3NsQzXUXT4y8" target="_blank" class="bg-[#B1CA77] text-white px-6 py-2 rounded-full hover:bg-[#A4B07D] transition">
                                 Commencer
                             </a>
                         </div>
@@ -105,7 +105,7 @@
                         <div class="mt-4 text-center">
                             <div class="text-base font-semibold mt-2">Avancé</div>
                             <br>
-                            <a href="{{ path('app_quiz', {number : 4} ) }}" class="bg-[#B1CA77] text-white px-6 py-2 rounded-full hover:bg-[#A4B07D] transition">
+                            <a href="https://forms.gle/CftHX9pE8MR2SVrSA" target="_blank" class="bg-[#B1CA77] text-white px-6 py-2 rounded-full hover:bg-[#A4B07D] transition">
                                 Commencer
                             </a>
                         </div>
@@ -126,7 +126,7 @@
                         <div class="mt-4 text-center">
                             <div class="text-base font-semibold mt-2">Intermédiaire</div>
                             <br>
-                            <a href="{{ path('app_quiz', {number : 5} ) }}" class="bg-[#B1CA77] text-white px-6 py-2 rounded-full hover:bg-[#A4B07D] transition">
+                            <a href="https://forms.gle/bhX8SewJgBgXk6Tm6" target="_blank" class="bg-[#B1CA77] text-white px-6 py-2 rounded-full hover:bg-[#A4B07D] transition">
                                 Commencer
                             </a>
                         </div>
@@ -147,7 +147,7 @@
                         <div class="mt-4 text-center">
                             <div class="text-base font-semibold mt-2">Débutant</div>
                             <br>
-                            <a href="{{ path('app_quiz', {number : 6} ) }}" class="bg-[#B1CA77] text-white px-6 py-2 rounded-full hover:bg-[#A4B07D] transition">
+                            <a href="https://forms.gle/rMNJp8Kd7FCa6Sw5A" target="_blank" class="bg-[#B1CA77] text-white px-6 py-2 rounded-full hover:bg-[#A4B07D] transition">
                                 Commencer
                             </a>
                         </div>
@@ -157,12 +157,12 @@
         </div>
 
         <!-- DIV N3 -->
-        <div class="w-full bg-[#CFD897] py-10">
-            <div class="max-w-6xl mx-auto mb-6">
-                <h2 class="text-4xl font-bold text-left ml-2">
-                    Challenges Écologiques
-                </h2>
-            </div>
+ <div class="w-full bg-[#CFD897] py-10">
+    <div class="max-w-6xl mx-auto mb-6 text-center">
+        <h2 class="text-4xl font-bold">
+            Challenges Écologiques
+        </h2>
+    </div>
 
 
            <!-- dashboard.html.twig -->
@@ -184,14 +184,19 @@
                         {{ challenge.description|raw }}
                     </div>
 
+                    <!-- Points -->
+                    <div class="flex-1 text-black text-lg font-semibold tracking-wider">
+                        {# {{ challenge.winNumber }} POINTS #}
+                    </div>
+                </div>
 
                 <!-- Ligne du bas -->
                 <div class="flex flex-col justify-between items-center mt-4 bg-[#A4B07D] text-white p-4 rounded-[15px]">
                     <div class="text-base font-semibold tracking-wider">
-                        <strong>Niveau :</strong> {{ challenge.level }}
+                        {# <strong>Niveau :</strong> {{ challenge.level }} #}
                     </div>
                     <div class="text-base font-semibold tracking-wider">
-                        <strong>Fréquence :</strong> <span class="uppercase">{{ challenge.frequence }}</span>
+                        {# <strong>Fréquence :</strong> <span class="uppercase">{{ challenge.frequence }}</span> #}
                     </div>
                     <div class="flex items-center gap-2 mt-4 sm:mt-0">
                         <button class="bg-[#d9d9d9] text-[#0f0d06] text-sm font-semibold tracking-wider rounded-[15px] px-6 py-2 hover:bg-[#c0c0c0] transition duration-200">

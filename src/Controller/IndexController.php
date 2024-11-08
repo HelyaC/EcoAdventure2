@@ -15,12 +15,4 @@ class IndexController extends AbstractController
         
         return $this->render('index/index.html.twig', []);
     }
-
-    #[Route('/jeux', name: 'app_jeux')]
-    public function jeux(): Response
-    {
-        return $this->render('jeux/jeux.html.twig', [
-            'controller_name' => 'IndexController',
-        ]);
-    }
 }

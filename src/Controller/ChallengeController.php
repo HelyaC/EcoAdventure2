@@ -17,7 +17,7 @@ class ChallengeController extends AbstractController
         $challenges = $challengeRepository->findAll();
         $challengerName =$challenges[0]->getUserId()->getfirstName();
         // Envoyer les données au template
-
+// dd($challenges);
         // Envoyer les données au template
         return $this->render('jeux/jeux.html.twig', [
             'challenges' => $challenges,

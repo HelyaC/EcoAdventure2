@@ -9,6 +9,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
+
 
 class ChallengeCrudController extends AbstractCrudController
 {
@@ -38,6 +40,22 @@ class ChallengeCrudController extends AbstractCrudController
                 ->setFormTypeOption('choice_label', function ($user) {
                     return $user->getFirstName(); // Utilisez getFirstName() pour afficher le prénom de l'utilisateur
                 }),
+                ChoiceField::new('frequence')
+                ->setLabel('Fréquence')
+                ->setChoices([
+                    'Journalière' => 'journaliere',
+                    'Mensuelle' => 'mensuelle',
+                    'Annuelle' => 'annuelle',
+                ]),
+            IntegerField::new('winNumber','Gaint de point'),
+            ChoiceField::new('level')
+                ->setLabel('Niveaux')
+                ->setChoices([
+                    'Niveau 1' => 1,
+                    'Niveau 2' => 2,
+                    'Niveau 3' => 3,
+                ]),
         ];
+
     }
 }
