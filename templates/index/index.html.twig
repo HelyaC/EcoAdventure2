@@ -8,7 +8,6 @@
 <div class="relative w-full bg-[#F9F2E1] py-10 flex justify-center items-center">
     <img class="w-full max-w-screen-lg h-auto object-cover rounded-md" src="/images/front.jpg" alt="Random image">
 </div>
-
         <!-- DIV N2 -->
         <div class="w-full bg-[#CFD897] py-10">
             <div class="text-center text-[#0f0d06] text-3xl sm:text-4xl md:text-5xl lg:text-[64px] font-semibold tracking-wide">
@@ -91,28 +90,32 @@
         </div>
 
         <!-- DIV N3 -->
-        <div class="w-full bg-[#F9F2E1] py-10">
+        <div id="score" class="w-full bg-[#F9F2E1] py-10">
             <div class="max-w-[1440px] mx-auto px-4 flex flex-col lg:flex-row lg:items-start lg:justify-between space-y-8 lg:space-y-0 lg:space-x-8">
-                <!-- Texte principal avec bouton -->
-                <div class="flex flex-col items-start text-left space-y-4 lg:w-1/2">
-                    <!-- Texte principal -->
-                    <div class="text-[#6e6e6e] text-4xl md:text-5xl lg:text-6xl font-semibold tracking-wide">
-                        C’est tout à propos des
+                <div class=" lg:w-1/2 flex flex-col gap-20">
+                    <!-- Texte principal avec bouton -->
+                    <div class="flex flex-col items-start text-left space-y-4 ">
+                        <!-- Texte principal -->
+                        <div class="text-[#6e6e6e] text-4xl md:text-5xl lg:text-6xl font-semibold tracking-wide">
+                            C’est tout à propos des
+                        </div>
+                        <div class="text-[#b1ca77] text-6xl md:text-7xl lg:text-8xl font-semibold tracking-wide">
+                            données
+                        </div>
+                        <div class="font-semibold text-2xl tracking-wide">
+                        Chaque pas compte pour l’environnement !
+                        </div>
+                        <!-- Bouton "Jouer" -->
+                        <div class="mt-6">
+                            <a class="px-4 py-2 flex items-center justify-center w-44 bg-[#b1ca77] text-white font-bold rounded-full hover:bg-[#8f9d6b] transition duration-300">
+                                Relève le défi !
+                            </a>
+                        </div>
                     </div>
-                    <div class="text-[#b1ca77] text-6xl md:text-7xl lg:text-8xl font-semibold tracking-wide">
-                        données
-                    </div>
-                    <div class="font-semibold text-2xl tracking-wide">
-                       Chaque pas compte pour l’environnement !
-                    </div>
-                    <!-- Bouton "Jouer" -->
-                    <div class="mt-6">
-                        <a class="px-4 py-2 flex items-center justify-center w-44 bg-[#b1ca77] text-white font-bold rounded-full hover:bg-[#8f9d6b] transition duration-300">
-                            Relève le défi !
-                        </a>
+                    <div class="flex justify-center">
+                        {% include 'profil/badge.html.twig' %}
                     </div>
                 </div>
-
                 <!-- Grille de cartes -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:w-1/2">
                     <!-- Carte 1 -->
@@ -227,5 +230,5 @@
         </div>
     </div>
 
-
+    <script src="{{ 'scripts/score.js' }}"></script>
 {% endblock %}
