@@ -1,0 +1,20 @@
+/* Cibler l'élément de menu Dashboard avec la classe 'custom-dashboard' */
+.custom-dashboard {
+    background-color: #4CAF50;  /* Couleur de fond verte */
+    color: white;               /* Couleur du texte blanche */
+    border-radius: 5px;         /* Coins arrondis */
+    padding: 10px 20px;         /* Ajout de padding */
+    font-size: 16px;            /* Taille de la police */
+    transition: background-color 0.3s; /* Transition pour le survol */
+}
+
+/* Ajouter un effet au survol */
+.custom-dashboard:hover {
+    background-color: #45a049; /* Couleur au survol */
+    color: white;               /* Rendre le texte blanc */
+}
+
+/* Personnaliser l'icône */
+.custom-dashboard i {
+    margin-right: 8px; /* Espacement entre l'icône et le texte */
+}
