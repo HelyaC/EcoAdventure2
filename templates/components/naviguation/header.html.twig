@@ -15,7 +15,7 @@
     
     <div class="hidden md:flex items-center space-x-4">
         <a href="{{ path('app_profil') }}" class="{% if app.request.attributes.get('_route') == 'app_profil' %}text-white{% else %}text-black{% endif %} text-xl font-normal font-['Inter'] hover:text-gray-800 transition duration-300">Profil</a>
-         <a href="{{ path('app_register') }}" class="{% if app.request.attributes.get('_route') == 'app_register' %}text-white{% else %}text-black{% endif %} text-xl font-normal font-['Inter'] hover:text-gray-800 transition duration-300">Se Connecter</a>
+         <a href="{{ path('app_register') }}" class="{% if app.request.attributes.get('_route') == 'app_register' %}text-white{% else %}text-black{% endif %} text-xl font-normal font-['Inter'] hover:text-gray-800 transition duration-300">S'inscrire</a>
     </div>
 </div>
 
@@ -42,7 +42,7 @@
             <a href="{{ path('app_profil') }}" class="text-black text-xl font-normal font-['Inter'] hover:text-gray-800 transition duration-300">Profil</a>
         </div>
         <div class="group relative flex gap-x-6 rounded-lg p-4 hover:bg-gray-50">
-            <a href="{{ path('app_register') }}" class="text-black text-xl font-normal font-['Inter'] hover:text-gray-800 transition duration-300">Se Connecter</a>     
+            <a href="{{ path('app_register') }}" class="text-black text-xl font-normal font-['Inter'] hover:text-gray-800 transition duration-300">S'inscrire</a>     
         </div> 
       </div>
       
