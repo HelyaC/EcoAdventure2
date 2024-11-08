@@ -173,14 +173,14 @@
             <div class="bg-[#f9f2e1] rounded-[30px] p-6 flex flex-col gap-6 shadow-xl hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out w-full">
 
                 <!-- Ligne du haut -->
-                <div class="flex flex-col sm:flex-row sm:justify-between items-center text-center sm:text-left gap-6 sm:gap-12">
+                <div class="flex flex-col sm:justify-between items-center text-center sm:text-left gap-6 sm:gap-12">
                     <!-- Nom du challenge -->
                     <div class="flex-1 text-black text-xl font-semibold uppercase tracking-wider">
                         Crée par : <span class="text-[#A4B07D]">{{ challengerName }}</span>
                     </div>
 
                     <!-- Description -->
-                    <div class="flex-1 text-black text-base font-medium tracking-wide">
+                    <div class="flex-1 text-center text-black text-base font-medium tracking-wide">
                         {{ challenge.description|raw }}
                     </div>
 
@@ -191,7 +191,7 @@
                 </div>
 
                 <!-- Ligne du bas -->
-                <div class="flex flex-col sm:flex-row justify-between items-center mt-4 bg-[#A4B07D] text-white p-4 rounded-[15px]">
+                <div class="flex flex-col justify-between items-center mt-4 bg-[#A4B07D] text-white p-4 rounded-[15px]">
                     <div class="text-base font-semibold tracking-wider">
                         <strong>Niveau :</strong> {{ challenge.level }}
                     </div>
@@ -208,15 +208,9 @@
         {% endfor %}
     </div>
 </div>
-</div>
 
 
 
-
-                </div>
-            </div>
-        </div>
-    </div>
 
 
 {% endblock %}
