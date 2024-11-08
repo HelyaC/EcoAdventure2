@@ -1,0 +1,254 @@
+:root {
+    --main-green: #2E7D75; /* Vert foncé mais doux, similaire à Apollo */
+    --light-green: #A8D5CD; /* Vert pastel pour un effet léger */
+    --soft-gray: #E0E0E0; /* Gris doux pour le fond */
+    --dark-gray: #4A4A4A; /* Gris foncé mais pas trop intense */
+    --text-color: #000000; /* Couleur de texte gris foncé pour une bonne lisibilité */
+    --button-text-color: white; /* Texte de bouton blanc pour un bon contraste */
+    --background-color: #F7F7F7; 
+    --sidebar-bg: var(--main-green);
+    --sidebar-menu-color: #FFF;
+    --sidebar-menu-active-item-bg: #3bd3b7;
+    --sidebar-menu-active-item-color: #2b441c;
+    --sidebar-menu-icon-color: #FFF;
+
+    --card-primary-bg: #007bff; /* Couleur pour carte Utilisateurs */
+    --card-success-bg: #28a745; /* Couleur pour carte Badges */
+    --card-warning-bg: #ffc107; /* Couleur pour carte Challenges */
+    --card-info-bg: #17a2b8; /* Couleur pour carte Recommandations */
+    --card-dark-bg: #343a40; /* Couleur pour carte Notifications */
+    --card-secondary-bg: #6c757d; /* Couleur pour carte Cours */
+    --card-danger-bg: #dc3545; 
+    --link-hover-color: var(--light-green);
+
+
+    /* Fond très clair */
+}
+
+/* Style général du corps pour un look épuré */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+}
+
+/* Header et navigation */
+.admin-navbar, .navbar {
+    background-color: var(--main-green);
+    color: var(--button-text-color);
+}
+
+.admin-navbar a, .navbar a {
+    color: var(--button-text-color);
+    text-decoration: none;
+}
+
+.main-header #header-logo a {
+    color: var(--button-text-color);
+
+}
+
+/* Header des pages */
+.page-header {
+    background-color: var(--light-green);
+    color: var(--text-color);
+    padding: 20px;
+    border-bottom: 2px solid var(--main-green);
+}
+
+/* Boutons */
+button, .btn {
+    background-color: var(--main-green);
+    color: var(--button-text-color);
+    border: 1px solid var(--main-green);
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover, .btn:hover {
+    background-color: var(--light-green);
+    color: var(--main-green);
+}
+
+button:hover, .btn-primary:hover {
+    background-color: var(--light-green);
+    color: var(--main-green);
+}
+
+
+/* Style de base du bouton "Create" */
+a  {
+    color: var(--main-green); /* Couleur du texte par défaut */
+}
+
+button, .btn a:hover{
+    background-color: var(--main-green); /* Couleur du texte par défaut */
+
+}
+
+
+
+/* Tableaux */
+.table thead {
+    background-color: var(--main-green);
+    color: white;
+}
+
+.table tbody {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.table tbody tr:hover {
+    background-color: var(--soft-gray);
+}
+
+/* Cartes */
+.card {
+    background-color: white;
+    border: 1px solid var(--main-green);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background-color: var(--light-green);
+    color: var(--text-color);
+    font-weight: bold;
+    padding: 10px;
+}
+
+.card-body {
+    background-color: white;
+    padding: 20px;
+    color: var(--text-color);
+}
+
+/* Formulaires */
+input, select, textarea {
+    border: 1px solid var(--main-green);
+    background-color: white;
+    color: var(--text-color);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--light-green);
+    outline: none;
+}
+
+/* Notifications */
+.alert-success {
+    background-color: var(--light-green);
+    color: var(--text-color);
+}
+
+.alert-danger {
+    background-color: #FF6B6B; /* Rouge doux pour les alertes */
+    color: white;
+}
+
+.alert-info {
+    background-color: var(--main-green);
+    color: white;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--main-green);
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 0.9rem;
+    border-top: 2px solid var(--light-green);
+}
+
+.sidebar{
+    background-color:  --sidebar-bg;
+    color: --sidebar-menu-color ;
+}
+
+table {
+    background-color:  --sidebar-bg;
+
+
+}
+
+.content-header{
+    background-color: --modal-header-bg var(--true-gray-900);
+
+}
+
+.content-body{
+    background-color:   --main-green;
+
+}
+
+table thead{
+    background-color:  --main-green;
+
+}
+
+
+
+
+/* Styles des cartes */
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: var(--text-color);
+}
+
+.card-header {
+    font-weight: bold;
+    padding: 10px;
+    color: var(--button-text-color);
+}
+
+.card-primary {
+    background-color: var(--card-primary-bg);
+}
+
+.card-success {
+    background-color: var(--card-success-bg);
+}
+
+.card-warning {
+    background-color: var(--card-warning-bg);
+}
+
+.card-info {
+    background-color: var(--card-info-bg);
+}
+
+.card-dark {
+    background-color: var(--card-dark-bg);
+}
+
+.card-secondary {
+    background-color: var(--card-secondary-bg);
+}
+
+.card-danger {
+    background-color: var(--card-danger-bg);
+}
+
+/* Texte et style de l'interface générale */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+}
+
+/* Ajoutez cette classe dans votre fichier CSS */
+.card {
+    transition: transform 0.3s ease; /* Transition pour l'effet de transformation */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Agrandissement de la carte lors du survol */
+}

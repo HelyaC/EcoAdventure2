@@ -40,6 +40,15 @@ class Challenge
     #[ORM\ManyToOne(inversedBy: 'challenges')]
     private ?User $userId = null;
 
+    #[ORM\Column]
+    private ?int $winNumber = null;
+
+    #[ORM\Column]
+    private ?int $level = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $frequence = null;
+
     public function __construct()
     {
         $this->userChallenges = new ArrayCollection();
@@ -148,6 +157,42 @@ class Challenge
     public function setUserId(?User $userId): static
     {
         $this->userId = $userId;
+
+        return $this;
+    }
+
+    public function getWinNumber(): ?int
+    {
+        return $this->winNumber;
+    }
+
+    public function setWinNumber(int $winNumber): static
+    {
+        $this->winNumber = $winNumber;
+
+        return $this;
+    }
+
+    public function getLevel(): ?int
+    {
+        return $this->level;
+    }
+
+    public function setLevel(int $level): static
+    {
+        $this->level = $level;
+
+        return $this;
+    }
+
+    public function getFrequence(): ?string
+    {
+        return $this->frequence;
+    }
+
+    public function setFrequence(string $frequence): static
+    {
+        $this->frequence = $frequence;
 
         return $this;
     }

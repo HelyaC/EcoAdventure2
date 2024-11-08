@@ -1,0 +1,43 @@
+easy_admin:
+    entities:
+        User:
+            class: App\Entity\User
+            label: 'Utilisateurs'
+        UserBadge:
+            class: App\Entity\UserBadge
+            label: 'Badges des Utilisateurs'
+        UserChallenge:
+            class: App\Entity\UserChallenge
+            label: 'Challenges des Utilisateurs'
+        Recommendation:
+            class: App\Entity\Recommendation
+            label: 'Recommandations'
+        Notification:
+            class: App\Entity\Notification
+            label: 'Notifications'
+        Cours:
+            class: App\Entity\Cours
+            label: 'Cours'
+        Contact:
+            class: App\Entity\Contact
+            label: 'Contacts'
+        Challenge:
+            class: App\Entity\Challenge
+            label: 'Challenges'
+        CarbonFootPrint:
+            class: App\Entity\CarbonFootPrint
+            label: 'Empreinte Carbone'
+        Badge:
+            class: App\Entity\Badge
+            label: 'Badges'
+        LastNews:
+            class: App\Entity\LastNews
+            label: 'Dernières Nouvelles'
+    design:
+        color_scheme: {
+            'content_background': '#FFF',
+            'main_menu_background': '#CCC',
+            'main_menu_contents': '#222',
+            'accent': '#73D631',
+            'link': '#4083A9'
+        }

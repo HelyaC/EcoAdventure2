@@ -15,7 +15,7 @@ class InstructionController extends AbstractController
         // Récupère tous les cours de la base de données
         $cours = $coursRepository->findAll();
 
-        // Passe les cours à la vue
+        dump($cours);die();        // Passe les cours à la vue
         return $this->render('instruction/index.html.twig', [
             'cours' => $cours,
         ]);
