@@ -15,4 +15,12 @@ class IndexController extends AbstractController
         
         return $this->render('index/index.html.twig', []);
     }
+
+    #[Route('/about', name: 'app_about')]
+    public function about(): Response
+    {
+        return $this->render('about/about.html.twig', [
+            'controller_name' => 'IndexController',
+        ]);
+    }
 }
